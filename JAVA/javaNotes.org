@@ -1,0 +1,4200 @@
+#+TITLE: JAVA NOTE
+#+DESCRIPTION: LEARNING JAVA
+#+AUTHOR: Linux-DEX
+#+OPTIONS: toc:3
+
+* TABLE OF CONTENT :toc:
+- [[#classesobjects][CLASSES/OBJECTS]]
+  - [[#create-a-class][Create a Class]]
+  - [[#create-an-object][Create an Object]]
+  - [[#multiple-objects][Multiple Objects]]
+  - [[#using-multiple-classes][Using Multiple Classes]]
+- [[#class-attributes][CLASS ATTRIBUTES]]
+  - [[#java-class-attributes][java class attributes]]
+  - [[#accessing-attributes][Accessing Attributes]]
+  - [[#modify-attributes][Modify Attributes]]
+  - [[#multiple-attributes][Multiple Attributes]]
+- [[#class-methods][CLASS METHODS]]
+  - [[#static-vs-public][Static vs Public]]
+  - [[#access-methods-with-an-object][Access Methods With an Object]]
+- [[#constructors][CONSTRUCTORS]]
+  - [[#constructor-parameters][Constructor Parameters]]
+- [[#modifiers][MODIFIERS]]
+  - [[#access-modifiers][Access Modifiers]]
+  - [[#non-access-modifiers][Non-Access Modifiers]]
+- [[#encapsulation][ENCAPSULATION]]
+  - [[#get-and-set][Get and Set]]
+- [[#packages][PACKAGES]]
+  - [[#java-packages--api][Java Packages & API]]
+  - [[#built-in-packages][Built-in Packages]]
+  - [[#user-defined-packages][User-defined Packages]]
+- [[#inheritance][INHERITANCE]]
+- [[#polymorphism][POLYMORPHISM]]
+- [[#inner-classes][INNER CLASSES]]
+  - [[#private-inner-class][Private Inner Class]]
+  - [[#static-inner-class][Static Inner Class]]
+  - [[#access-outer-class-from-inner-class][Access Outer Class From Inner Class]]
+- [[#abstraction][ABSTRACTION]]
+- [[#interface][INTERFACE]]
+  - [[#multiple-interface][Multiple Interface]]
+- [[#enums][ENUMS]]
+  - [[#enum-inside-a-class][Enum inside a class]]
+  - [[#enum-in-a-switch-statement][Enum in a switch statement]]
+  - [[#loop-through-an-enum][Loop through an Enum]]
+- [[#user-inputscanner][USER INPUT(SCANNER)]]
+  - [[#java-user-input][Java User Input]]
+  - [[#input-types][Input Types]]
+- [[#date--time][DATE & TIME]]
+  - [[#date][Date]]
+  - [[#display-current-date][Display Current Date]]
+  - [[#display-current-time][Display Current Time]]
+  - [[#display-current-date--time][Display Current Date & Time]]
+  - [[#formatting-date--time][Formatting Date & Time]]
+- [[#arraylist][ARRAYLIST]]
+  - [[#add-items][Add Items]]
+  - [[#access-an-item][Access an Item]]
+  - [[#change-an-item][Change an Item]]
+  - [[#remove-an-item][Remove an Item]]
+  - [[#arraylist-size][ArrayList Size]]
+  - [[#loop-through-an-arraylist][Loop Through an ArrayList]]
+  - [[#other-types][Other Types]]
+  - [[#sort-an-arraylist][Sort an ArrayList]]
+- [[#linked-list][LINKED LIST]]
+  - [[#linkedlist][LinkedList]]
+  - [[#arraylist-vs-linkedlist][ArrayList vs LinkedList]]
+  - [[#linkedlist-methods][LinkedList Methods]]
+- [[#hashmap][HASHMAP]]
+  - [[#hashmap-1][HashMap]]
+  - [[#add-items-1][Add Items]]
+  - [[#access-an-item-1][Access an Item]]
+  - [[#remove-an-item-1][Remove an Item]]
+  - [[#hashmap-size][HashMap Size]]
+  - [[#loop-through-a-hashmap][Loop Through a HashMap]]
+  - [[#other-types-1][Other Types]]
+- [[#hash-set][HASH SET]]
+  - [[#hashset][HashSet]]
+  - [[#add-items-2][Add Items]]
+  - [[#check-if-an-item-exists][Check If an Item Exists]]
+  - [[#remove-an-item-2][Remove an item]]
+  - [[#hashset-size][HashSet Size]]
+  - [[#loop-through-a-hashset][Loop Through a HashSet]]
+  - [[#other-types-2][Other Types]]
+- [[#iterator][ITERATOR]]
+  - [[#java-iterator][Java Iterator]]
+  - [[#getting-an-iterator][Getting an Iterator]]
+  - [[#looping-through-a-collection][Looping Through a Collection]]
+  - [[#removing-items-from-a-collection][Removing Items from a Collection]]
+- [[#wrapper-classes][WRAPPER CLASSES]]
+  - [[#java-wrapper-classes][Java Wrapper Classes]]
+  - [[#creating-wrapper-objects][Creating Wrapper Objects]]
+- [[#java-exception---trycatch][JAVA EXCEPTION - TRY...CATCH]]
+  - [[#java-try-and-catch][Java Try and Catch]]
+  - [[#finally][Finally]]
+  - [[#the-throw-keyword][The throw keyword]]
+- [[#regular-expressions][REGULAR EXPRESSIONS]]
+  - [[#what-is-a-regular-expression][What is a Regular Expression?]]
+  - [[#flags][Flags]]
+  - [[#regular-expression-patterns][Regular Expression Patterns]]
+- [[#threads][THREADS]]
+  - [[#java-threads][Java Threads]]
+  - [[#creating-a-thread][Creating a Thread]]
+  - [[#running-threads][Running Threads]]
+  - [[#concurrency-problems][Concurrency Problems]]
+- [[#files][FILES]]
+  - [[#java-file-handling][Java File Handling]]
+  - [[#create--write-to-files][CREATE & WRITE TO FILES]]
+  - [[#read-file][READ FILE]]
+  - [[#delete-file][DELETE FILE]]
+- [[#java-scope][JAVA SCOPE]]
+  - [[#java-scope-1][Java Scope]]
+  - [[#method-scope][Method Scope]]
+  - [[#block-scope][Block Scope]]
+- [[#methods][METHODS]]
+  - [[#create-a-method][Create a Method]]
+- [[#stringbuffer-class][STRINGBUFFER CLASS]]
+  - [[#stringbuffer-class-append-method][StringBuffer Class append() Method]]
+  - [[#stringbuffer-insert-method][StringBuffer insert() Method]]
+  - [[#stringbuffer-replace-method][StringBuffer replace() Method]]
+  - [[#stringbuffer-delete-method][StringBuffer delete() Method]]
+  - [[#stringbuffer-reverse-method][StringBuffer reverse() Method]]
+  - [[#stringbuffer-capacity-method][StringBuffer capacity() Method]]
+  - [[#stringbuffer-ensurecapacity-method][StringBuffer ensureCapacity() method]]
+- [[#collection-in-java][Collection in JAVA]]
+  - [[#what-is-collection-in-java][What is Collection in Java.]]
+  - [[#what-is-a-framework-in-java][What is a framework in Java.]]
+  - [[#what-is-collection-framework][What is Collection Framework]]
+  - [[#hierarchy-of-collection-framework][Hierarchy of Collection Framework]]
+  - [[#methods-of-collection-interface][Methods of Collection interface]]
+  - [[#iterator-interface][Iterator Interface]]
+  - [[#iterable-interface][Iterable Interface]]
+  - [[#collection-interface][Collection Interface]]
+  - [[#list-interface][List Interface]]
+  - [[#arraylist-1][ArrayList]]
+  - [[#linkedlist-1][LinkedList]]
+  - [[#vector][Vector]]
+  - [[#stack][Stack]]
+  - [[#queue-interface][Queue interface]]
+  - [[#priorityqueue][PriorityQueue]]
+  - [[#deque-interface][Deque Interface]]
+  - [[#arraydeque][ArrayDeque]]
+  - [[#set-interface][Set interface]]
+  - [[#hashset-1][HashSet]]
+  - [[#linkedhashset][LinkedHashSet]]
+  - [[#sortedset-interface][SortedSet Interface]]
+  - [[#treeset][TreeSet]]
+- [[#java-stack][JAVA Stack]]
+  - [[#java-stack-class][JAVA Stack Class]]
+  - [[#stack-class-constructor][Stack Class Constructor]]
+  - [[#creating-a-stack][Creating a Stack]]
+  - [[#method-of-the-stack-class][Method of the Stack Class]]
+  - [[#stack-class-empty-method][Stack Class empty() Method]]
+  - [[#stack-class-push-method][Stack Class push() Method]]
+  - [[#stack-class-pop-method][Stack Class pop() Method]]
+  - [[#stack-class-peek-method][Stack Class peek() Method]]
+  - [[#stack-class-search-method][Stack Class search() Method]]
+  - [[#java-stack-operations][Java Stack Operations]]
+- [[#java-arraylist][JAVA ArrayList]]
+  - [[#hierarchy-of-arraylist-class][Hierarchy of ArrayList class]]
+  - [[#arraylist-class-declaration][ArrayList class declaration]]
+  - [[#java-non-generic-vs-generic-collection][Java Non-generic Vs Generic Collection]]
+  - [[#java-arraylist-example][Java ArrayList Example]]
+  - [[#iterating-arraylist-using-for-each-loop][Iterating ArrayList using For-each loop]]
+  - [[#get-and-set-arraylist][Get and Set ArrayList]]
+  - [[#sort-arraylist][Sort Arraylist]]
+- [[#java-linkedlist-class][JAVA LinkedList Class]]
+  - [[#hierarchy-of-linkedlist-class][Hierarchy of LinkedList class]]
+  - [[#linkedlist-class-declaration][LinkedList class declaration]]
+  - [[#constructors-of-java-linkedlist][Constructors of Java LinkedList]]
+  - [[#methods-of-java-linkedlist][Methods of Java LinkedList]]
+  - [[#java-linkedlist-example][Java LinkedList Example]]
+  - [[#java-linkedlist-example-to-add-elements][Java LinkedList example to add elements]]
+  - [[#java-linkedlist-example-to-remove-elements][Java LinkedList example to remove elements]]
+  - [[#java-linkedlist-example-to-reverse-a-list-of-elements][Java LinkedList example to reverse a list of elements]]
+  - [[#java-linkedlist-example-book][Java LinkedList Example: Book]]
+- [[#difference-between-arraylist-and-linkedlist][Difference Between ArrayList and LinkedList]]
+- [[#java-list][Java List]]
+  - [[#list-interface-declaration][List Interface declaration]]
+  - [[#java-list-methods][Java List Methods]]
+  - [[#java-list-vs-arraylist][Java List vs ArrayList]]
+  - [[#create-list][Create List]]
+  - [[#java-list-example][Java List example]]
+  - [[#convert-array-to-list][Convert Array to List]]
+  - [[#convert-list-to-array][Convert List to Array]]
+  - [[#get-and-set-element-in-list][Get and Set Element in List]]
+  - [[#sort-list][Sort List]]
+  - [[#java-listiterator-interface][Java ListIterator Interface]]
+  - [[#example-of-list-book][Example of List: Book]]
+- [[#java-hashset][Java HashSet]]
+  - [[#difference-between-list-and-set][Difference between List and Set]]
+  - [[#hierarchy-of-hashset-class][Hierarchy of HashSet class]]
+  - [[#hashset-class-declaration][HashSet class declaration]]
+  - [[#constructors-of-java-hashset-class][Constructors of Java HashSet class]]
+  - [[#methods-of-java-hashset-class][Methods of java HashSet class]]
+  - [[#java-hashset-example][Java HashSet Example]]
+  - [[#java-hashset-example-ignoring-duplication-elements][Java HashSet example ignoring duplication elements]]
+  - [[#java-hashset-example-book][Java HashSet Example: Book]]
+- [[#java-linkedhashset-class][Java LinkedHashSet Class]]
+  - [[#hierarchy-of-linkedhashset-class][Hierarchy of LinkedHashSet class]]
+  - [[#linkedhashset-class-declaration][LinkedHashSet Class Declaration]]
+  - [[#constructors-of-java-linkedhashset-class][Constructors of Java LinkedHashSet Class]]
+  - [[#java-linkedhashset-example][Java LinkedHashSet Example]]
+  - [[#java-linkedhashset-example-ignoring-duplication-elements][Java LinkedHashSet example ignoring duplication Elements]]
+  - [[#remove-elements-using-linkedhashset-class][Remove Elements Using LinkedHashSet Class]]
+  - [[#java-linkedhashset-example-book][Java LinkedHashSet Example: Book]]
+- [[#java-treeset-class][Java TreeSet class]]
+  - [[#internal-working-of-the-treeset-class][Internal Working of the TreeSet Class]]
+  - [[#synchronization-of-the-treeset-class][Synchronization of The TreeSet Class]]
+  - [[#hierarchy-of-treeset-class][Hierarchy of TreeSet class]]
+  - [[#treeset-class-declaration][TreeSet Class Declaration]]
+  - [[#constructors-of-java-treeset-class][Constructors of Java TreeSet Class]]
+  - [[#methods-of-java-treeset-class][Methods of Java TreeSet Class]]
+
+* CLASSES/OBJECTS
+** Create a Class
+To create a class, use the keyword *class*:
+#+begin_src java
+public class Main{
+   int x = 5;
+}
+#+end_src
+
+** Create an Object
+In java, an object is created from a class. We have already created the class named *Main*, so now we can use this created objects.
+To create an object of *Main*, specify the class name, followed by the object name, and use the keyword *new*.
+#+begin_src java
+public class java{
+int x = 5;
+   public static void main(String[] arg) {
+        Main myObj = new Main();
+        System.out.println(myObj.x);
+    }
+}
+#+end_src
+
+** Multiple Objects
+You can create multiple object of one class:
+#+begin_src java
+public class java{
+    int x = 5;
+    public static void main(String[] arg) {
+        Main myObj1 = new Main();
+        Main myObj2 = new Main();
+        System.out.println(myObj1.x);
+        System.out.println(myObj2.x);
+    }
+}
+#+end_src
+
+** Using Multiple Classes
+You can also create an object of a class and access it in another class. This is often used for better organization of classes(one class has all the attribute and methods, while the other class holds the *main()* method (code to be executed)).
+
+Remember that the name of the java file should match the class name. In this example, we have created two files in the same directory/ folder:
+- Main.java
+- Second.java
+
+#+begin_src java
+public class Main {
+    int x = 5;
+}
+#+end_src
+
+#+begin_src java
+class Second {
+    public static void main(String[] args){
+        Main obj = new Main();
+        System.out.println(obj.x);
+    }
+}
+#+end_src
+
+* CLASS ATTRIBUTES
+** java class attributes
+The variable defined inside the class is attributes of class.
+#+begin_src java
+public class Main {
+     int x = 5;
+     int y = 3;
+}
+#+end_src
+
+** Accessing Attributes
+You can access attributes by creating an object of the class, and by using the dot syntax( . ):
+#+begin_src java
+public class Main {
+    int x = 5;
+    public static void main(String[] args){
+        Main obj = new Main();
+        System.out.println(obj.x);
+    }
+}
+#+end_src
+
+** Modify Attributes
+You can also modify attribute values:
+#+begin_src java
+public class Main {
+    int x;
+    public static void main(String[] args){
+        Main obj = new Main();
+        obj.x = 34;
+        System.out.println(obj.x);
+    }
+}
+#+end_src
+
+Or override existing values:
+#+begin_src java
+public class Main {
+    int x = 23;
+    public static void main(String[] args){
+        Main obj = new Main();
+        obj.x = 34;
+        System.out.println(obj.x);
+    }
+}
+#+end_src
+
+If you don't want the ability to override existing values, declare the attribute as final:
+#+begin_src java
+public class Main {
+    final int x = 23;
+    public static void main(String[] args){
+        Main obj = new Main();
+        obj.x = 34;
+        System.out.println(obj.x);
+    }
+}
+#+end_src
+
+** Multiple Attributes
+You can specify as many attributes as you want:
+#+begin_src java
+public class Main {
+    char ch = 'ch';
+    String str = "name";
+    int x = 23;
+    public static void main(String[] args){
+        Main obj = new Main();
+        obj.x = 34;
+        System.out.println("string: " + obj.str + " char" + obj.ch);
+        System.out.println(obj.x);
+    }
+}
+#+end_src
+
+* CLASS METHODS
+Methods are declared within a class, and that they are used to perform certain actions:
+#+begin_src java
+public class Main {
+    static void myMethod() {
+        System.out.println("Hello");
+    }
+}
+#+end_src
+
+=myMethod()= prints a text, when it is *called*.
+
+calling method inside the *main()* function.
+#+begin_src java
+public class Main {
+    static void myMethod() {
+        System.out.println("Hello");
+    }
+    public static void main(String[] args){
+        myMethod();
+    }
+}
+#+end_src
+
+** Static vs Public
+we created a *static* method, which means that it can be accessed without creating an object of the class, unlike *public*, which can only be accessed by objects:
+#+begin_src java
+public class Main {
+  static void myStaticMethod() {
+    System.out.println("Static methods can be called without creating objects");
+  }
+
+  public void myPublicMethod() {
+    System.out.println("Public methods must be called by creating objects");
+  }
+
+  public static void main(String[] args) {
+    myStaticMethod(); 
+
+    Main myObj = new Main(); 
+    myObj.myPublicMethod(); 
+  }
+}
+#+end_src
+
+** Access Methods With an Object
+#+begin_src java
+public class Main {
+ 
+  public void fullThrottle() {
+    System.out.println("The car is going as fast as it can!");
+  }
+
+  public void speed(int maxSpeed) {
+    System.out.println("Max speed is: " + maxSpeed);
+  }
+
+  public static void main(String[] args) {
+    Main myCar = new Main();   
+    myCar.fullThrottle();     
+    myCar.speed(200);        
+  }
+}
+#+end_src
+
+* CONSTRUCTORS
+A constructor in java is a *special method* that is used to initialize objects. The constructor is called when an object of a class is created. It can be use to set initial values for object attributes:
+#+begin_src java
+public class Main {
+  int x;  
+
+  public Main() {
+    x = 5;
+  }
+
+  public static void main(String[] args) {
+    Main myObj = new Main(); 
+    System.out.println(myObj.x);
+  }
+}
+#+end_src
+
+** Constructor Parameters
+Constructor can also take parameters, which is used to initilize attributes.
+#+begin_src java
+public class Main {
+  int x;
+
+  public Main(int y) {
+    x = y;
+  }
+
+  public static void main(String[] args) {
+    Main myObj = new Main(5);
+    System.out.println(myObj.x);
+  }
+}
+#+end_src
+
+You can have as many parameters as you want.
+
+* MODIFIERS
+The =public= keyword is an *access modifier*, meaning that it is used to set the access level for the classes, attributes, methods and constructors.
+
+We divide modifiers into two groups:
+- *Access Modifiers* - controls the access level.
+- *Non-Access Modifiers* - do not control access level, but provides other functionality.
+
+** Access Modifiers
+For *classes*, you can use either =public= or default:
+*** /public/ 
+    The class is accessible by any other class
+*** /default/
+    The class is only accessible by classes in the same package. This is used when you don't specify a modifier. 
+
+For *attributes, methods and constructors*, you can use the one of the following:
+*** /public/
+    The code is accessible for all classes.
+*** /private/
+    The code is only accessible within the declared class.
+*** /default/
+    The code is only accessible in the same package. this is used when you don't specify a modifier.
+*** /protected/
+    The code is accessible in the same package and *subclasses.* 
+
+** Non-Access Modifiers
+For *classes*, you can use either =final= or =abstract=:
+*** /final/
+    The classes cannot be inherited by other classes.
+*** /abstract/
+    The class cannot be used to create objects.
+
+For *attributes and methods*, you can use the one of the following:
+*** /final/
+    Attributes and methods cannot be overriden/modified.
+*** /static/
+    Attributes and methods belongs to the class, rather than an object.
+*** /abstract/
+    Can only be used in a abstract class, and can only be used on methods. The method does not have a body, for example *abstract void run()* 
+*** /transient/
+    Attributes and methods are skipped when serializing the object containing them.
+*** /synchronized/
+    Methods can only be accessed by one thread at a time.
+*** /volatile/
+    The value of a attribute is not cached thread-locally, and is always read from the "main memory".
+
+*** Final
+If you don't want the ability to override exisiting attribute values, declare attribute as *final*:
+#+begin_src java
+public class Main {
+  final int x = 10;
+  final double PI = 3.14;
+
+  public static void main(String[] args) {
+    Main myObj = new Main();
+    myObj.x = 50; // will generate an error: cannot assign a value to a final variable
+    myObj.PI = 25; // will generate an error: cannot assign a value to a final variable
+    System.out.println(myObj.x);
+  }
+}
+#+end_src
+
+*** Static
+A *static* method means that it can be accessed without creating an object of the class, unlike =public=:
+#+begin_src java
+public class Main {
+  // Static method
+  static void myStaticMethod() {
+    System.out.println("Static methods can be called without creating objects");
+  }
+
+  // Public method
+  public void myPublicMethod() {
+    System.out.println("Public methods must be called by creating objects");
+  }
+
+  // Main method
+  public static void main(String[ ] args) {
+    myStaticMethod(); // Call the static method
+    // myPublicMethod(); This would output an error
+
+    Main myObj = new Main(); // Create an object of Main
+    myObj.myPublicMethod(); // Call the public method
+  }
+}
+#+end_src
+
+*** Abstract
+An *abstract* method belongs to an *abstract* class, and it does not have a body. The body is provided by the subclass:
+#+begin_src java
+// abstract class
+abstract class Main {
+  public String fname = "John";
+  public int age = 24;
+  public abstract void study(); // abstract method
+}
+
+// Subclass (inherit from Main)
+class Student extends Main {
+  public int graduationYear = 2018;
+  public void study() { // the body of the abstract method is provided here
+    System.out.println("Studying all day long");
+  }
+}
+
+// Code from filename: Second.java
+class Second {
+  public static void main(String[] args) {
+    // create an object of the Student class (which inherits attributes and methods from Main)
+    Student myObj = new Student();
+
+    System.out.println("Name: " + myObj.fname);
+    System.out.println("Age: " + myObj.age);
+    System.out.println("Graduation Year: " + myObj.graduationYear);
+    myObj.study(); // call abstract method
+  }
+}
+#+end_src
+
+* ENCAPSULATION
+The meaning of *Encapsulation*, is to make sure that "sensitive" data is hidden from users. To achieve this, you must:
+    - declare class variable/attributes as *private*.
+    - provide public *get* and *set* methods to access and update the value of a *private* variable.
+
+** Get and Set
+The =get= method returns the variable value, and the =set= method sets the value.
+
+Syntax for get and set
+#+begin_src java
+public class Person {
+  private String name; // private = restricted access
+  // Getter
+  public String getName() {
+    return name;
+  }
+  // Setter
+  public void setName(String newName) {
+    this.name = newName;
+  }
+}
+#+end_src
+
+Instead, we use the *getName()* and *setName()* methods to access and update the variable:
+#+begin_src java
+public class Main {
+    public static void main(String[] args) {
+        Person myObj = new Person();
+        myObj.setName("John"); // Set the value of the name variable to "John"
+        System.out.println(myObj.getName());
+    }
+}
+#+end_src
+
+* PACKAGES
+** Java Packages & API
+A package in Java is used to group related classes. Think of it as *a folder in a file directory*. We use package to avoid name conflicts and to write a better maintainable code. Package are divided into two categories:
+    - Built-in package
+    - User-defined package
+      
+** Built-in Packages
+The Java API is a libarary of prewritten classes, that are free to use, included in the Java Development Environment.
+To use a class or a package from the library, you need to use the *import* keyword:
+*/Syntax/*:
+#+begin_src java
+import package.name.Class; // import a single class
+import package.name.*;  // import the whole package
+#+end_src
+
+*/Example/*:
+#+begin_src java
+import java.util.Scanner;
+import java.util.*;
+#+end_src
+
+** User-defined Packages
+To create your own package, you need to understand that Java uses a file system directory to store them. Just like folders on your computer:
+
+Example:
+ root -> mypack -> MyPackageClass.java
+
+To create a package, use the *package* keyword:
+#+begin_src java
+package mypack;
+class MyPackageClass {
+  public static void main(String[] args) {
+    System.out.println("This is my package!");
+  }
+}
+#+end_src
+
+Save the file as *MyPackageClass.java*, and compile it:
+#+begin_example
+> javac MyPackageClass.java
+#+end_example
+
+Then compile the package:
+#+begin_example
+> javac -d . MyPackageClass.java
+#+end_example
+
+When we compiled the package in the example above, a new folder was created, called "mypack".
+
+To run the MyPackageClass.java file, write the following :
+#+begin_example
+> java mypack.MyPackageClass
+#+end_example
+
+#+begin_example output
+This is my package!
+#+end_example
+
+* INHERITANCE
+ In Java, it is possible to inherit attributes and methods from one class to another. We group the "inheritance concept" into two categories:
+    - *subclass* (child) - the class that inherits from another class.
+    - *superclass* (parent) - the class being inherited from.
+      
+To inherit from a class, use the =extends= keyword.
+Example:
+#+begin_src java
+class Vehicle {
+    protected String brand = "Ford";        // Vehicle attribute
+    public void honk() {                    // Vehicle method
+        System.out.println("Tuut, tuut!");
+    }
+}
+
+class Car extends Vehicle {
+    private String modelName = "Mustang";    // Car attribute
+    public static void main(String[] args) {
+        // Create a myCar object
+        Car myCar = new Car();
+        // Call the honk() method (from the Vehicle class) on the myCar object
+        myCar.honk();
+        // Display the value of the brand attribute (from the Vehicle class) and the value of the modelName from the Car class
+        System.out.println(myCar.brand + " " + myCar.modelName);
+    }
+}
+#+end_src
+
+*** The final Keyword
+If you don't want other classes to inherit from a class, use the =final= keyword:
+#+begin_example
+final class Vehicle {
+...
+}
+class Car extends Vehicle {
+...
+}
+#+end_example
++ This program will give error because Vehicle classed defined with final keyword.
+
+* POLYMORPHISM
+Polymorphism means "many forms", and it occurs when we have many classes that are related to each other by inheritance.
+#+begin_src java
+class Animal {
+  public void animalSound() {
+    System.out.println("The animal makes a sound");
+  }
+}
+
+class Pig extends Animal {
+  public void animalSound() {
+    System.out.println("The pig says: wee wee");
+  }
+}
+
+class Dog extends Animal {
+  public void animalSound() {
+    System.out.println("The dog says: bow wow");
+  }
+}
+#+end_src
+
+Now we can create *Pig* and *Dog* objects and call the *animalSound()* method on both of them:
+#+begin_src java
+class Animal {
+  public void animalSound() {
+    System.out.println("The animal makes a sound");
+  }
+}
+
+class Pig extends Animal {
+  public void animalSound() {
+    System.out.println("The pig says: wee wee");
+  }
+}
+
+class Dog extends Animal {
+  public void animalSound() {
+    System.out.println("The dog says: bow wow");
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    Animal myAnimal = new Animal();  // Create a Animal object
+    Animal myPig = new Pig();  // Create a Pig object
+    Animal myDog = new Dog();  // Create a Dog object
+    myAnimal.animalSound();
+    myPig.animalSound();
+    myDog.animalSound();
+  }
+}
+#+end_src
+
+
+* INNER CLASSES
+In java, it is also possible to nest classes. The purpose of nested classes is to group classes that belong together, which makes you code more readable and maintainable.
+
+#+begin_src java
+class OuterClass {
+  int x = 10;
+
+  class InnerClass {
+    int y = 5;
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    OuterClass myOuter = new OuterClass();
+    OuterClass.InnerClass myInner = myOuter.new InnerClass();
+    System.out.println(myInner.y + myOuter.x);
+  }
+}
+#+end_src
+
+** Private Inner Class
+Unlike a "regular" class, an inner class can be *private* or *protected*. If you don't want outside objects to access the inner class, declare the class as *private*:
+
+If you try access a private inner class from an outside class, an error occurs:
+#+begin_src java
+class OuterClass {
+    int x = 10;
+
+    private class InnerClass {
+        int y = 5;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        OuterClass myOuter = new OuterClass();
+        OuterClass.InnerClass myInner = myOuter.new InnerClass();
+        System.out.println(myInner.y + myOuter.x);
+    }
+}
+#+end_src
+
+** Static Inner Class
+An inner class can also be *static*, which means that you can access it without creating an object of the outside class:
+
+#+begin_src java
+class OuterClass {
+  int x = 10;
+
+  static class InnerClass {
+    int y = 5;
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    OuterClass.InnerClass myInner = new OuterClass.InnerClass();
+    System.out.println(myInner.y);
+  }
+}
+#+end_src
+
+** Access Outer Class From Inner Class
+One advantage of inner classes, is that they can access attributes and methods of the outer class:
+#+begin_src java
+class OuterClass {
+  int x = 10;
+
+  class InnerClass {
+    public int myInnerMethod() {
+      return x;
+    }
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    OuterClass myOuter = new OuterClass();
+    OuterClass.InnerClass myInner = myOuter.new InnerClass();
+    System.out.println(myInner.myInnerMethod());
+  }
+}
+#+end_src
+
+* ABSTRACTION
+Data *abstraction* is the process of hiding certain details and showing only essential information to the user.
+Abstraction can be achieved with either *abstract classes* or *interfaces*.
+
+The =abstract= keyword is a non-access modifier, used for classes and methods:
+- *Abstract class*: is a restricted class that cannot be used to create objects.
+- *Abstract methods*: can only be used in an abstract class, and it does not have a body. The body is provided by the subclass.
+
+#+begin_src java
+abstract class Animal {
+  public abstract void animalSound();
+  public void sleep() {
+    System.out.println("Zzz");
+  }
+}
+#+end_src
+
+#+begin_src java
+// Abstract class
+abstract class Animal {
+  // Abstract method (does not have a body)
+  public abstract void animalSound();
+  // Regular method
+  public void sleep() {
+    System.out.println("Zzz");
+  }
+}
+
+// Subclass (inherit from Animal)
+class Pig extends Animal {
+  public void animalSound() {
+    // The body of animalSound() is provided here
+    System.out.println("The pig says: wee wee");
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    Pig myPig = new Pig(); // Create a Pig object
+    myPig.animalSound();
+    myPig.sleep();
+  }
+}
+#+end_src
+
+
+* INTERFACE
+An =Interface= is completely "*abstract class*" that is used to group relative method with empty body:
+#+begin_src java
+interface Animal {
+  public void animalSound(); // interface method (does not have a body)
+  public void run(); // interface method (does not have a body)
+}
+#+end_src
+
+To access the interface method, the inteface must be "implemented" by another class with the *implements* keyword.
+The body of interface method is provided by "implement" class:
+#+begin_src java
+// Interface
+interface Animal {
+  public void animalSound(); // interface method (does not have a body)
+  public void sleep(); // interface method (does not have a body)
+}
+
+// Pig "implements" the Animal interface
+class Pig implements Animal {
+  public void animalSound() {
+    // The body of animalSound() is provided here
+    System.out.println("The pig says: wee wee");
+  }
+  public void sleep() {
+    // The body of sleep() is provided here
+    System.out.println("Zzz");
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    Pig myPig = new Pig();  // Create a Pig object
+    myPig.animalSound();
+    myPig.sleep();
+  }
+}
+#+end_src
+
+** Multiple Interface
+To implement multiple interface, separate them with a comma:
+#+begin_src java
+interface FirstInterface {
+  public void myMethod(); // interface method
+}
+
+interface SecondInterface {
+  public void myOtherMethod(); // interface method
+}
+
+class DemoClass implements FirstInterface, SecondInterface {
+  public void myMethod() {
+    System.out.println("Some text..");
+  }
+  public void myOtherMethod() {
+    System.out.println("Some other text...");
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    DemoClass myObj = new DemoClass();
+    myObj.myMethod();
+    myObj.myOtherMethod();
+  }
+}
+#+end_src
+
+
+* ENUMS
+An =enum= is a special "class" that represent group of *constants* (unchangeable variables, like *final* variables).
+To create an *enum*, use the *enum* keyword ( instend of class or interface ), and separate the constant with comma.
+=/ Note that they should be in uppercase letters/=.
+
+#+begin_src java
+enum Level {
+  LOW,
+  MEDIUM,
+  HIGH
+}
+#+end_src
+
+You can access the =enum= constant with the dot syntax:
+#+begin_src java
+Level myVar = Level.MEDIUM;
+#+end_src
+
+** Enum inside a class
+You can also have an enum inside class:
+#+begin_src java
+public class Main {
+  enum Level {
+    LOW,
+    MEDIUM,
+    HIGH
+  }
+
+  public static void main(String[] args) {
+    Level myVar = Level.MEDIUM; 
+    System.out.println(myVar);
+  }
+}
+#+end_src
+
+** Enum in a switch statement
+Enum is often used in switch statement to check the corresponding value:
+#+begin_src java
+enum Level {
+  LOW,
+  MEDIUM,
+  HIGH
+}
+
+public class Main {
+  public static void main(String[] args) {
+    Level myVar = Level.MEDIUM;
+
+    switch(myVar) {
+      case LOW:
+        System.out.println("Low level");
+        break;
+      case MEDIUM:
+         System.out.println("Medium level");
+        break;
+      case HIGH:
+        System.out.println("High level");
+        break;
+    }
+  }
+}
+#+end_src
+
+** Loop through an Enum
+The enum type has a *values()* method, which return an array of all enum constants. The method is useful when you want to loop through constant of all enum.
+#+begin_src java
+for (Level myVar : Level.values()) {
+  System.out.println(myVar);
+}
+#+end_src
+
+
+* USER INPUT(SCANNER)
+** Java User Input
+The *scanner* class is used to get user input, and it is find in the =java.util= package.
+To use the *scanner* class, create an object of the class and use any of the available method found in the scanner class documentation.
+There we will be use *nextLine()* , which is used to read string.
+#+begin_src java
+import java.util.Scanner; 
+
+class Main {
+  public static void main(String[] args) {
+    Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+    System.out.println("Enter username");
+
+    String userName = myObj.nextLine();  // Read user input
+    System.out.println("Username is: " + userName);  // Output user input
+  }
+}
+#+end_src
+
+** Input Types
+*** nextBoolean()
+    Reads a *boolean* value from the user
+*** nextByte()
+    Read a *byte* value from the user.
+*** nextDouble()
+    Read a *double* value from the user.
+*** nextFloat()
+    Read a *float* value from the user.
+*** nextInt()
+    Read a *int* value from the user.
+*** nextLine()
+    Read a *String* value from the user.
+*** nextLong()
+    Read a *long* value from the user.
+*** nextShort()
+    Read a *short* value from the user.
+    
+
+* DATE & TIME
+** Date
+Java does not have a built-in Date class, but we can import the *java.time* package to work with the date and time API. The package includes many date and time classes. 
+
+| Class             | Description                                            |
+| LocalDate         | Represents a date(year, month, day)                    |
+| LocalTime         | Represents a time(hour, minute, second)                |
+| LocalDateTime     | Represents both a date and a time                      |
+| DateTimeFormatter | Formatter for displaying and parsing date-time objects |
+
+** Display Current Date
+To display the current date, import the =java.time.LocalDate= class, and use its =now()= method:
+#+begin_src java
+import java.time.LocalDate; // import the LocalDate class
+
+public class Main {
+  public static void main(String[] args) {
+    LocalDate myObj = LocalDate.now(); // Create a date object
+    System.out.println(myObj); // Display the current date
+  }
+}
+#+end_src
+
+** Display Current Time
+To display the current time(hour, minute, second, and nanoseconds),import the =java.time.LocalTime= class, and use its =now()= method:
+#+begin_src java
+import java.time.LocalTime; // import the LocalTime class
+
+public class Main {
+  public static void main(String[] args) {
+    LocalTime myObj = LocalTime.now();
+    System.out.println(myObj);
+  }
+}
+#+end_src
+
+** Display Current Date & Time
+To display the current date and time, import the =java.time.LocalDateTime= class, and use its =now()= method:
+#+begin_src java
+import java.time.LocalDateTime; // import the LocalDateTime class
+
+public class Main {
+  public static void main(String[] args) {
+    LocalDateTime myObj = LocalDateTime.now();
+    System.out.println(myObj);
+  }
+}
+#+end_src
+
+** Formatting Date & Time
+The "T" in the example above is used to separate the date from the time. you can use the *DateTimeFormatter* class with the *ofPattern()* method in the same package to format or parse date-time objects. 
+#+begin_src java
+import java.time.LocalDateTime; // Import the LocalDateTime class
+import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter class
+
+public class Main {
+  public static void main(String[] args) {
+    LocalDateTime myDateObj = LocalDateTime.now();
+    System.out.println("Before formatting: " + myDateObj);
+    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+
+    String formattedDate = myDateObj.format(myFormatObj);
+    System.out.println("After formatting: " + formattedDate);
+  }
+}
+#+end_src
+
+
+* ARRAYLIST
+The *ArrayList* class is a resizable _array_, which can be found in the =java.util= package.
+The difference between a built-in array and an *ArrayList* in java, is that the size of an array connot be modified.
+
+#+begin_src java
+import java.util.ArrayList;
+
+ArrayList<String> cars = new ArrayList<String>();
+#+end_src
+
+** Add Items
+
+#+begin_src java
+import java.util.ArrayList;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<String> cars = new ArrayList<String>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    cars.add("Ford");
+    cars.add("Mazda");
+    System.out.println(cars);
+  }
+}
+#+end_src
+
+** Access an Item
+To access an element in the *ArrayList*, use the *get()* method and refer to the index number.
+#+begin_src java
+cars.get(0);
+#+end_src
+
+** Change an Item
+To modify an element, use the *set()* method and refer to the index number.
+#+begin_src java
+cars.set(0, "Opel");
+#+end_src
+
+** Remove an Item
+To remove an element, use the *remove()* method and refer to the index number:
+#+begin_src java
+cars.remove(0);
+#+end_src
+
+To remove all the elements in the *ArrayList()*, use the *clear()* method:
+#+begin_src java
+cars.clear();
+#+end_src
+
+** ArrayList Size
+To find out how many elements an ArrayList have, use the *size* method:
+#+begin_src java
+cars.size();
+#+end_src
+
+** Loop Through an ArrayList
+Loop through the elements of an *ArrayList* with a *for* loop, and use the *size()* method to specify how many times the loop should run:
+#+begin_src java
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<String> cars = new ArrayList<String>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    cars.add("Ford");
+    cars.add("Mazda");
+    for (int i = 0; i < cars.size(); i++) {
+      System.out.println(cars.get(i));
+    }
+  }
+}
+#+end_src
+
+You can also loop through an *ArrayList* with the =for-each= loop.
+#+begin_src java
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<String> cars = new ArrayList<String>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    cars.add("Ford");
+    cars.add("Mazda");
+    for (String i : cars) {
+      System.out.println(i);
+    }
+  }
+}
+#+end_src
+
+** Other Types
+Elements in an ArrayList are actually objects. In the examples above, we created elements (objects) of type "string". Remember that a String in java is an object( not a primitive types). To use other types, such as int, you must specify an equivalent _wrapper class_: *Integer*. For other primitivej types, use: *Boolean* for boolean, *character* for char, *Double* for double, etc:
+
+#+begin_src java
+import java.util.ArrayList;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<Integer> myNumbers = new ArrayList<Integer>();
+    myNumbers.add(10);
+    myNumbers.add(15);
+    myNumbers.add(20);
+    myNumbers.add(25);
+    for (int i : myNumbers) {
+      System.out.println(i);
+    }
+  }
+}
+#+end_src
+
+** Sort an ArrayList
+Another useful class in the *java.util* package is the *Collections* class, which include the *sort()* method for sorting lists alphabetically or numerically:
+#+begin_src java
+import java.util.ArrayList;
+import java.util.Collections;  // Import the Collections class
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<String> cars = new ArrayList<String>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    cars.add("Ford");
+    cars.add("Mazda");
+    Collections.sort(cars);  // Sort cars
+    for (String i : cars) {
+      System.out.println(i);
+    }
+  }
+}
+#+end_src
+
+* LINKED LIST
+** LinkedList
+The *LinkedList* class is almost identical to the *ArrayList*:
+#+begin_src java
+import java.util.LinkedList;
+
+public class Main {
+  public static void main(String[] args) {
+    LinkedList<String> cars = new LinkedList<String>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    cars.add("Ford");
+    cars.add("Mazda");
+    System.out.println(cars);
+  }
+}
+#+end_src
+
+** ArrayList vs LinkedList
+- The *LinkedList* class is a collection which can contain many object of the same type, just like the *ArrayList*.
+- The *LinkedList* class has all of the same methods as the *ArrayList* class because they both implement the *List* interface. This means that you can add items, change items, remove items and clear the list in the same way.
+- However, while the *ArrayList* class and the *LinkedList* class can be used in the same way, they are built very differently.
+
+*** How the ArrayList works
+The *ArrayList* class has a regular array inside it. When an element is added, it is placed into the array. If the array is not big enough, a new, larger array is created to replace the old one and the old one is removed.
+
+*** How the linkedList works
+The *LinkedList* stores its items in "containers". The list has a link to the first container and each container has a link to the next container in the list. To add an element to the list, the element is placed into a new container and that container is linked to one of the other containers in the list.
+
+** LinkedList Methods
+For many case, the *ArrayList* is more efficient as it is common to need access to random items in the list, but the *LinkedList* provided several methods to do certain operations more efficiently:
+
+| Method        | Description                                   |
+| ......        | ...........                                   |
+| addFirst()    | Adds an item to the beginning of the list     |
+| addLast()     | Add an item to the end of the list            |
+| removeFirst() | Remove an item from the beginning of the list |
+| removeLast()  | Remove an item from the end of the list       |
+| getFirst()    | Get the item at the beginning of the list     |
+| getLast()     | Get the item at the end of the list           |
+
+
+* HASHMAP
+** HashMap
+A =/HashMap/= store items in "*key/value*" pairs, and you can access them by an index of another type.
+One object is used as a key (index) to another object (value). It can store different types: *string* keys and *Integer* values, or the same type, like: *string* keys and *string* values:
+
+#+begin_src java
+import java.util.HashMap;
+
+HashMap<String, String> capitalCities = new HashMap<String, String>();
+#+end_src
+
+** Add Items
+The *HashMap* class has many useful methods.For example, to add items to it, use the *put()* method:
+#+begin_src java
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args){
+        HashMap<String, String> capitalCities = new HashMap<String, String>();
+
+        capitalCities.put("England", "london");
+        capitalCities.put("Germany", "Berlin");
+        capitalCities.put("Norway", "Osla");
+        capitalCities.put("USA", "Washington DC");
+        System.out.println(capitalCities);
+    }
+}
+#+end_src
+
+** Access an Item
+To access a value in the *HashMap*, use the *get()* method and refer to its key:
+#+begin_src java
+capitalCities.get("england");
+#+end_src
+
+** Remove an Item
+To remove an item, use the *remove()* method and refer to the key:
+#+begin_src java
+capitalCities.remove("england");
+#+end_src
+
+To remove all items, use the *clear()* method:
+#+begin_src java
+capitalCities.clear();
+#+end_src
+
+** HashMap Size
+To find out how many items there are, use the *size()* method:
+#+begin_src java
+capitalCities.size();
+#+end_src
+
+** Loop Through a HashMap
+Loop through the items of a *HashMap* with a *for-each* loop
+#+begin_example Note:
+Use the *keySet()* method if you only want the keys, and use the values() method if you only want the values.
+#+end_example
+
+#+begin_src java
+// print keys
+for ( String i : capitalCities.keySet() ){
+    System.out.println(i);
+}
+#+end_src
+
+
+#+begin_src java
+// print values
+for ( String i : capitalCities.values() ){
+    System.out.println(i);
+}
+#+end_src
+
+
+#+begin_src java
+// print keys and values
+for ( String i : capitalCities.keySet() ){
+    System.out.println("key: " + i + " value: " + capitalCities.get(i));
+}
+#+end_src
+
+** Other Types
+To use other types, such as int, you must specify an equivalent _wrapper class_: *Integer*. For other primitive types, use: *Boolean* for boolean, *Character* for char, *Double* for double, etc:
+
+#+begin_src java
+import java.util.HashMap;
+
+public class Main {
+  public static void main(String[] args) {
+    HashMap<String, Integer> people = new HashMap<String, Integer>();
+
+    people.put("John", 32);
+    people.put("Steve", 30);
+    people.put("Angie", 33);
+
+    for (String i : people.keySet()) {
+      System.out.println("key: " + i + " value: " + people.get(i));
+    }
+  }
+}
+#+end_src
+
+
+* HASH SET
+** HashSet
+A HashSet is a collection of items where every item is unique, and it is found in the =java.util= package.
+#+begin_src java
+import java.util.HashSet;
+
+HashSet<String> cars = new HashSet<String>();
+#+end_src
+
+** Add Items
+The *HashSet* class has many useful methods. For example, to add items to it, use the *add()* method:
+#+begin_src java
+import java.util.HashSet;
+
+public class Main {
+  public static void main(String[] args) {
+    HashSet<String> cars = new HashSet<String>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    cars.add("Ford");
+    cars.add("BMW");
+    cars.add("Mazda");
+    System.out.println(cars);
+  }
+}
+#+end_src
+
+#+begin_example Note:
+In the example above, even though BMW is added twice it only appears once in the set because every item in a set has to be unique.
+#+end_example
+
+** Check If an Item Exists
+To check whether an item exists in a HashSet, use the *contains()* methods:
+#+begin_src java
+cars.contains("Mazda");
+#+end_src
+
+** Remove an item
+To remove an item, use the *remove()* method:
+#+begin_src java
+cars.remove("volvo");
+#+end_src
+
+To remove all items, use the *clear()* method:
+#+begin_src java
+cars.clear();
+#+end_src
+
+** HashSet Size
+To find out how many items there are, use the *size* method:
+#+begin_src java
+cars.size();
+#+end_src
+
+** Loop Through a HashSet
+Loop through the items of an *HashSet* with a *for-each* loop:
+#+begin_src java
+for ( String i : cars ) {
+    System.out.println(i);
+}
+#+end_src
+
+** Other Types
+To use other types, such as int, you must specify an equivalent _wrapper class_: *Integer*. For other primitive type, use: *Boolean* for boolean, *Character* for char, *Double* for double, etc:
+#+begin_src java
+import java.util.HashSet;
+
+public class Main {
+  public static void main(String[] args) {
+
+    // Create a HashSet object called numbers
+    HashSet<Integer> numbers = new HashSet<Integer>();
+
+    // Add values to the set
+    numbers.add(4);
+    numbers.add(7);
+    numbers.add(8);
+
+    // Show which numbers between 1 and 10 are in the set
+    for(int i = 1; i <= 10; i++) {
+      if(numbers.contains(i)) {
+        System.out.println(i + " was found in the set.");
+      } else {
+        System.out.println(i + " was not found in the set.");
+      }
+    }
+  }
+}
+#+end_src
+
+
+* ITERATOR
+** Java Iterator
+An *Iterator* is an object that can be used to loop through collection, like _ArrayList_ and _HashSet_. It is called an "iterator" because "iterating" is the technical term for looping.
+
+To use an Iterator, you must import it from the =java.util= package.
+
+** Getting an Iterator
+The *iterator()* method can be used to get an *Iterator* for any collection:
+#+begin_src java
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Main {
+  public static void main(String[] args) {
+
+    // Make a collection
+    ArrayList<String> cars = new ArrayList<String>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    cars.add("Ford");
+    cars.add("Mazda");
+
+    // Get the iterator
+    Iterator<String> it = cars.iterator();
+
+    // Print the first item
+    System.out.println(it.next());
+  }
+}
+#+end_src
+
+** Looping Through a Collection
+To loop Through a collection, use the *hasNext()* and *next()* methods of the *Iterator*:
+#+begin_src java
+while(it.hasNext()){
+    System.out.println(it.next());
+}
+#+end_src
+
+** Removing Items from a Collection
+Iterators are designed to easily change the collections that they loop through. The *remove()* method can remove items from a collection while looping.
+#+begin_src java
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<Integer> numbers = new ArrayList<Integer>();
+    numbers.add(12);
+    numbers.add(8);
+    numbers.add(2);
+    numbers.add(23);
+    Iterator<Integer> it = numbers.iterator();
+    while(it.hasNext()) {
+      Integer i = it.next();
+      if(i < 10) {
+        it.remove();
+      }
+    }
+    System.out.println(numbers);
+  }
+}
+#+end_src
+
+Note:
+#+begin_example
+Trying to remove items using *for loop* or a *for-each loop* would not work correctly because the collection is changing size at the same time that the code is trying to loop.
+#+end_example
+
+
+* WRAPPER CLASSES
+** Java Wrapper Classes
+Wrapper classes provide a way to use primitive data types ( int, boolean, etc..) as objects.
+ 
+| Primitive Data Type | Wrapper Class  |
+| ................... | .............. |
+| byte                | Byte           |
+| short               | Short          |
+| int                 | Integer        |
+| long                | Long           |
+| float               | Float          |
+| double              | Double         |
+| boolean             | Boolean        |
+| char                | Character      |
+
+Sometimes you must use wrapper classes, for example when working with Collection objects, such as *ArrayList*, where primitive types cannot be used (the list can only store objects).
+
+#+begin_example
+ArrayList<int> myNumber = new ArrayList<int>();  // Invalid
+
+ArrayList<Integer> myNumber = new ArrayList<Integer>();  // Valid
+#+end_example
+
+** Creating Wrapper Objects
+To Create a wrapper object, use the wrapper class instead of the primitive type. To get the value, you can just print the object.
+#+begin_src java
+public class Main {
+  public static void main(String[] args) {
+    Integer myInt = 5;
+    Double myDouble = 5.99;
+    Character myChar = 'A';
+    System.out.println(myInt);
+    System.out.println(myDouble);
+    System.out.println(myChar);
+  }
+}
+#+end_src
+
+The following are used to get the value associated with the corresponding wrapper object:
+- intValue()
+- byteValue()
+- shortValue()
+- longValue()
+- floatValue()
+- doubleValue()
+- charValue()
+- booleanValue()
+
+#+begin_src java
+public class Main {
+  public static void main(String[] args) {
+    Integer myInt = 5;
+    Double myDouble = 5.99;
+    Character myChar = 'A';
+    System.out.println(myInt.intValue());
+    System.out.println(myDouble.doubleValue());
+    System.out.println(myChar.charValue());
+  }
+}
+#+end_src
+
+Another useful method is the =toString()= method, which is used to convert wrapper object to string.
+
+In the following example, we convert an *Integer* to a *String*, and use the *length()* method of the *String* class to output the length of "String".
+#+begin_src java
+public class Main {
+  public static void main(String[] args) {
+    Integer myInt = 100;
+    String myString = myInt.toString();
+    System.out.println(myString.length());
+  }
+}
+#+end_src
+
+
+* JAVA EXCEPTION - TRY...CATCH
+** Java Try and Catch
+The *try* statement allows you to define a block of code to be tested for errors while it is being executed.
+The *catch* statement allows you to define a block of code to be executed, if an error occurs in the try block.
+The =try= and =catch= keywords come in pairs
+
+*** Syntax:
+#+begin_src java
+try {
+    // Block of code to try
+}
+catch (Exception e) {
+    // Block of code to handle errors
+}
+#+end_src
+
+If an error occurs, we can use =try...catch= to catch the error and execute some code to handle it:
+#+begin_src java
+public class Main {
+  public static void main(String[ ] args) {
+    try {
+      int[] myNumbers = {1, 2, 3};
+      System.out.println(myNumbers[10]);
+    } catch (Exception e) {
+      System.out.println("Something went wrong.");
+    }
+  }
+}
+#+end_src
+
+** Finally
+The =finally= statement lets you execute code, after =try...catch=, regardless of the result:
+#+begin_src java
+public class Main {
+  public static void main(String[] args) {
+    try {
+      int[] myNumbers = {1, 2, 3};
+      System.out.println(myNumbers[10]);
+    } catch (Exception e) {
+      System.out.println("Something went wrong.");
+    } finally {
+      System.out.println("The 'try catch' is finished.");
+    }
+  }
+}
+#+end_src
+
+** The throw keyword
+The =throw= statement allow you to create a custom error.
+The =throw= statement is used together with an *exception type*. There was many exception types available in Java: =ArithmeticException=, =FileNotFoundException=,=ArrayIndexOutofBoundsException=,=SecurityException=, etc:
+
+#+begin_src java
+public class Main {
+  static void checkAge(int age) {
+    if (age < 18) {
+      throw new ArithmeticException("Access denied - You must be at least 18 years old.");
+    }
+    else {
+      System.out.println("Access granted - You are old enough!");
+    }
+  }
+
+  public static void main(String[] args) {
+    checkAge(15); // Set age to 15 (which is below 18...)
+  }
+}
+#+end_src
+
+
+* REGULAR EXPRESSIONS
+** What is a Regular Expression?
+A regular expression is a sequence of character that forms a search pattern. When you search for data in a text, you can use this search pattern to describe what you are searching for.
+
+Java does not have a built-in Regular expression class, but we can import the =java.util.regex= package to work with regular expressions.
+The package includes the following classes:
++ *Pattern* Class - Defines a pattern 
++ *Matcher* Class - Used to search for the pattern.
++ *PatternSyntaxException* Class - Indicates syntax error in a regular expression pattern.
+
+#+begin_src java
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main {
+  public static void main(String[] args) {
+    Pattern pattern = Pattern.compile("w3schools", Pattern.CASE_INSENSITIVE);
+    Matcher matcher = pattern.matcher("Visit W3Schools!");
+    boolean matchFound = matcher.find();
+    if(matchFound) {
+      System.out.println("Match found");
+    } else {
+      System.out.println("Match not found");
+    }
+  }
+}
+#+end_src
+
+** Flags
+Flags in the =compiler()= method change how the search is performed. Here are a few of them:
+- *Pattern.CASE_INSENSITIVE* - The case of letters will be ignored when performing a search.
+- *Pattern.LITERAL* - Special characters in the pattern will not have any special meaning and will be treated as ordinary characters when performing a search.
+- *Pattern.UNICODE_CASE* - Use it together with the *CASE_INSENSITIVE* flag to also ignore the case of letters outside of the English alphabet.
+
+** Regular Expression Patterns
+The first parameter of the =Pattern.compile()= method is the pattern. It describe what is being searched for:
+
+*** Brackets are used to find a range of characters:
+| Expression  | Description                                              |
+| ........... | ..............                                           |
+| [abc]       | Find one character from the options between the brackets |
+| [^abc]      | Find one character NOT between the brackets              |
+| [0-9]       | Find one character from the range 0 to 9                 |
+
+*** Metacharacters
+Metacharacters are characters with a special meaning:
+| Metacharacter   | Description                                                        |
+| ............... | ...........................                                        |
+| .               | Find just one instance of any character                            |
+| ^               | Find a match as the beginning of a string as in: ^Hello            |
+| $               | Finds a match at the end of the string as in: World$               |
+| \d              | Find a digit                                                       |
+| \s              | Find a whitespace character                                        |
+| \b              | find the match at the beginning of the world                       |
+| \uxxx           | Find the unicode character specified by the hexadecimal number xxx |
+| |               | Find a match for any one of the pattern separated by |             |
+
+*** Quantifiers
+| Quantifier   | Description                                                   |
+| ............ | .............                                                 |
+| n+           | Matchs any string that contains at least one n                |
+| n*           | Matchs any string that contains zero or more occurrences of n |
+| n?           | Matchs any string that contains zero or more occurrences of n |
+| n{x}         | Matchs any string that contains a sequences of X n's          |
+| n{x,y}       | Matchs any string that contains a sequences of X to Y n's     |
+| n{x,}        | Matchs any string that contains a sequences of at least X n's |
+
+
+* THREADS
+** Java Threads
+Threds allows a program to operate more efficiently by doing multiple things at things at the same time.
+Threads can be used to perform complicated tasks in the background without interrupting the main program.
+
+** Creating a Thread
+There are two ways to create a thread.
+It can be created by extending the *Thread* class and overriding the *run()* method:
+
+*** Extend Syntax
+#+begin_src java
+public class Main extends Thread {
+  public void run() {
+    System.out.println("This code is running in a thread");
+  }
+}
+#+end_src
+
+*** Implement Syntax
+Another way to create a thread is to implement the *Runnable* interface:
+#+begin_src java
+public class Main implements Runnable {
+  public void run() {
+    System.out.println("This code is running in a thread");
+  }
+}
+#+end_src
+
+
+** Running Threads
+If the class extends the *Thread* class, the thread can be run by creating an instance of the class and call its *start()* method:
+
+*** Extend Example
+#+begin_src java
+public class Main extends Thread {
+  public static void main(String[] args) {
+    Main thread = new Main();
+    thread.start();
+    System.out.println("This code is outside of the thread");
+  }
+  public void run() {
+    System.out.println("This code is running in a thread");
+  }
+}
+#+end_src
+
+*** Implement Example
+If the class implements the *Runnable* interface, the thread can be run by passing a instance of the class to a *Thread* object's constructor and then calling the thread's ~start()~ method:
+#+begin_src java
+public class Main implements Runnable {
+  public static void main(String[] args) {
+    Main obj = new Main();
+    Thread thread = new Thread(obj);
+    thread.start();
+    System.out.println("This code is outside of the thread");
+  }
+  public void run() {
+    System.out.println("This code is running in a thread");
+  }
+}
+#+end_src
+
+** Concurrency Problems
+Because threads run at the same time as other parts of the program, there is no way to know in which order the code will run. When the threads and main program are reading and writing the same variables, the values are unpredictable. The problems that result from this are called concurrency problems.
+
+#+begin_src java
+public class Main extends Thread {
+  public static int amount = 0;
+
+  public static void main(String[] args) {
+    Main thread = new Main();
+    thread.start();
+    System.out.println(amount);
+    amount++;
+    System.out.println(amount);
+  }
+
+  public void run() {
+    amount++;
+  }
+}
+#+end_src
+
+To avoid concurrency problems, it is best to share a few attributes between threads as possible. If attributes need to be shared, one possible solution is to use the =isAlive()= method of the thread to check whether the thread has finished running before using attributes that the thread can changes.
+
+#+begin_src java
+public class Main extends Thread {
+  public static int amount = 0;
+
+  public static void main(String[] args) {
+    Main thread = new Main();
+    thread.start();
+    // Wait for the thread to finish
+    while(thread.isAlive()) {
+    System.out.println("Waiting...");
+  }
+  // Update amount and print its value
+  System.out.println("Main: " + amount);
+  amount++;
+  System.out.println("Main: " + amount);
+  }
+  public void run() {
+    amount++;
+  }
+}
+#+end_src
+
+
+* FILES
+File handling is an important part of any application.
+Java has several methods for creating, reading, updating, and deletin files
+
+** Java File Handling
+The *File* class from the =java.io= package, allows us to work with files.
+To use the *File* class, create an object of the class, and specify the filename or directory name:
+#+begin_src java
+import java.io.File;
+
+File myObj = new File("filename.txt");
+#+end_src
+
+The *File* class has many useful methods for creating and getting information about files.
+
+| Method            | Type           | Description                                   |
+| ................  | .............. | ............................                  |
+| canRead()         | Boolean        | Tests whether the file is readable or not     |
+| canWrite()        | Boolean        | Tests whether the file is writable or not     |
+| createNewFile()   | Boolean        | Create an empty file                          |
+| delete()          | Boolean        | Deletes a file                                |
+| exists()          | Boolean        | Tests whether the file exists                 |
+| getName()         | String         | Returns the name of the file                  |
+| getAbsolutePath() | String         | Returns the absolute pathname of the file     |
+| length()          | Long           | Returns the size of the file in bytes         |
+| list()            | String[]       | Returns an array of the file in the directory |
+| mkdir()           | Boolean        | Create a directory                            |
+
+** CREATE & WRITE TO FILES
+*** Create a File
+To create a file in Java, you can use the *createNewFile()* method. This method returns a boolean value: *true* if the file was successfully created, and *false* if the file already exists. Note that the method is enclosed in a =try...catch= block. This is necessary because it throws an *IOException* if an error occurs.
+
+#+begin_src java
+import java.io.File;  // Import the File class
+import java.io.IOException;  // Import the IOException class to handle errors
+
+public class CreateFile {
+  public static void main(String[] args) {
+    try {
+      File myObj = new File("filename.txt");
+      if (myObj.createNewFile()) {
+        System.out.println("File created: " + myObj.getName());
+      } else {
+        System.out.println("File already exists.");
+      }
+    } catch (IOException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+  }
+}
+#+end_src
+
+To create a file in a specific directory, specify the path of the file and use double backslashes to escape the "\" character(for windows). on Mac and linux you can just write the path, like: /users/name/filename.txt
+
+#+begin_src java
+File myObj = new File("C:\\Users\\MyName\\filename.txt");
+#+end_src
+
+*** Write to a File
+In the following example, we use the *FileWriter* class together with its *write()* method to write some text to the file we created in the example above. Note that when you are done writing to the file, you should close it with the *close()* method:
+
+#+begin_src java
+import java.io.FileWriter;   // Import the FileWriter class
+import java.io.IOException;  // Import the IOException class to handle errors
+
+public class WriteToFile {
+  public static void main(String[] args) {
+    try {
+      FileWriter myWriter = new FileWriter("filename.txt");
+      myWriter.write("Files in Java might be tricky, but it is fun enough!");
+      myWriter.close();
+      System.out.println("Successfully wrote to the file.");
+    } catch (IOException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+  }
+}
+#+end_src
+
+
+** READ FILE
+*** Read a File
+#+begin_src java
+import java.io.File;  // Import the File class
+import java.io.FileNotFoundException;  // Import this class to handle errors
+import java.util.Scanner; // Import the Scanner class to read text files
+
+public class ReadFile {
+  public static void main(String[] args) {
+    try {
+      File myObj = new File("filename.txt");
+      Scanner myReader = new Scanner(myObj);
+      while (myReader.hasNextLine()) {
+        String data = myReader.nextLine();
+        System.out.println(data);
+      }
+      myReader.close();
+    } catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+  }
+}
+#+end_src
+
+
+*** Get File Information
+To get more information about a file, use any of the *File* methods:
+#+begin_src java
+import java.io.File;  // Import the File class
+
+public class GetFileInfo { 
+  public static void main(String[] args) {
+    File myObj = new File("filename.txt");
+    if (myObj.exists()) {
+      System.out.println("File name: " + myObj.getName());
+      System.out.println("Absolute path: " + myObj.getAbsolutePath());
+      System.out.println("Writeable: " + myObj.canWrite());
+      System.out.println("Readable " + myObj.canRead());
+      System.out.println("File size in bytes " + myObj.length());
+    } else {
+      System.out.println("The file does not exist.");
+    }
+  }
+}
+#+end_src
+
+** DELETE FILE
+*** Delete a File
+To delete a file in java, use the *delete()* method:
+#+begin_src java
+import java.io.File;  // Import the File class
+
+public class DeleteFile {
+  public static void main(String[] args) { 
+    File myObj = new File("filename.txt"); 
+    if (myObj.delete()) { 
+      System.out.println("Deleted the file: " + myObj.getName());
+    } else {
+      System.out.println("Failed to delete the file.");
+    } 
+  } 
+}
+#+end_src
+
+*** Delete a Folder
+You can also delete a folder. However, it must be empty:
+#+begin_src java
+import java.io.File; 
+
+public class DeleteFolder {
+  public static void main(String[] args) { 
+    File myObj = new File("C:\\Users\\MyName\\Test"); 
+    if (myObj.delete()) { 
+      System.out.println("Deleted the folder: " + myObj.getName());
+    } else {
+      System.out.println("Failed to delete the folder.");
+    } 
+  } 
+}
+#+end_src
+
+
+* JAVA SCOPE
+** Java Scope
+In java, variable are only accessible inside the region they are created. This is called *Scope*.
+
+** Method Scope
+Variable declared directly inside a method are available anywhere in the method following the line of code in which they were declared:
+#+begin_src java
+public class Main {
+  public static void main(String[] args) {
+
+    // Code here CANNOT use x
+
+    int x = 100;
+
+    // Code here can use x
+    System.out.println(x);
+  }
+}
+#+end_src
+
+** Block Scope
+A block of code refers to all the code between curly braces {}.
+
+Variable declared inside block of code are only accessible by the code between the curly braces, which follows the line in which the variable was declared.
+
+#+begin_src java
+public class Main {
+  public static void main(String[] args) {
+
+    // Code here CANNOT use x
+
+    { // This is a block
+
+      // Code here CANNOT use x
+
+      int x = 100;
+
+      // Code here CAN use x
+      System.out.println(x);
+
+    } // The block ends here
+
+  // Code here CANNOT use x
+
+  }
+}
+#+end_src
+
+* METHODS
+A *method* is a block of code which only run when it is called.
+Method are used to peform certain action, and they are also know as *function*.
+
+** Create a Method
+A method must be declared within a class. It is defined with the name of the method, followed by parentheses(). Java provide some pre-defined methods, such as =System.out.println()=, but you can also create your own method to perform certain action.
+#+begin_src java
+public class Main {
+    static void myMethod() {
+        // code to be executed
+    }
+}
+#+end_src
+
+
+* STRINGBUFFER CLASS
+Java StringBuffer class is used to create mutable(modifiable) string object. The StringBuffer class in java is the same as String class except it is mutable i.e it can be changed.
+
+** StringBuffer Class append() Method
+The append() method concatenates the given argument with this String.
+#+begin_src java
+class StringBufferExp{
+    public static void main(String args[]){
+        StringBuffer sb = new StringBuffer("hello ");
+        sb.append("java");
+        System.out.println(sb);
+    }
+}
+#+end_src
+
+** StringBuffer insert() Method
+The ~insert()~ method insert the given String with this String at the given position.
+#+begin_src java
+class StringBufferExample2{  
+    public static void main(String args[]){  
+        StringBuffer sb=new StringBuffer("Hello ");  
+        sb.insert(1,"Java");//now original string is changed  
+        System.out.println(sb);//prints HJavaello  
+    }  
+}
+#+end_src
+
+** StringBuffer replace() Method
+The ~replace()~ method replaces the given String from the specified beginIndex and endIndex.
+#+begin_src java
+class StringBufferExample3{  
+    public static void main(String args[]){  
+        StringBuffer sb=new StringBuffer("Hello");  
+        sb.replace(1,3,"Java");  
+        System.out.println(sb);//prints HJavalo  
+    }  
+}  
+#+end_src
+
+** StringBuffer delete() Method
+The ~delete()~ Method of the StringBuffer class deletes the String from the specified beginIndex to endIndex.
+#+begin_src java
+class StringBufferExample4{  
+    public static void main(String args[]){  
+        StringBuffer sb=new StringBuffer("Hello");  
+        sb.delete(1,3);  
+        System.out.println(sb);//prints Hlo  
+    }  
+}  
+#+end_src
+
+** StringBuffer reverse() Method
+The ~reverse()~ method of the StringBuilder class reverses the current String.
+#+begin_src java
+class StringBufferExample5{  
+    public static void main(String args[]){  
+        StringBuffer sb=new StringBuffer("Hello");  
+        sb.reverse();  
+        System.out.println(sb);//prints olleH  
+    }  
+} 
+#+end_src
+
+** StringBuffer capacity() Method
+The ~capacity()~ method of the StringBuffer class returns the current capacity of the buffer. The default capacity of the buffer is 16. If the number of character increases from its current capacity, it increase the capacity by (oldcapacity*2) + 2. 
+#+begin_src java
+class StringBufferExample6{  
+    public static void main(String args[]){  
+        StringBuffer sb=new StringBuffer();  
+        System.out.println(sb.capacity());//default 16  
+        sb.append("Hello");  
+        System.out.println(sb.capacity());//now 16  
+        sb.append("java is my favourite language");  
+        System.out.println(sb.capacity());//now (16*2)+2=34 i.e (oldcapacity*2)+2  
+    }  
+}  
+#+end_src
+
+** StringBuffer ensureCapacity() method
+The ~ensureCapacity~ method of the StringBuffer class ensures that the given capacity is the minimum to the current capacity. If it is greater than the current capacity, it increases the capacity by (oldcapacity*2)+2. 
+#+begin_src java
+class StringBufferExample7{  
+    public static void main(String args[]){  
+        StringBuffer sb=new StringBuffer();  
+        System.out.println(sb.capacity());//default 16  
+        sb.append("Hello");  
+        System.out.println(sb.capacity());//now 16  
+        sb.append("java is my favourite language");  
+        System.out.println(sb.capacity());//now (16*2)+2=34 i.e (oldcapacity*2)+2  
+        sb.ensureCapacity(10);//now no change  
+        System.out.println(sb.capacity());//now 34  
+        sb.ensureCapacity(50);//now (34*2)+2  
+        System.out.println(sb.capacity());//now 70  
+    }  
+}
+#+end_src
+
+* Collection in JAVA
++ The *Collection in java* is  a framwork that provides an architecture to store and manipulate the group of objects.
++ Java collections can achieve all the operations that you perform on a data such as searching, sorting, insertion, manipulation, and deletion.
++ Java Collection means a single unit of objects. Java Collection framwork provides many interfaces(Set, List, Queue, Deque) and classes(ArrayList, Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet).
+
+** What is Collection in Java.
+A Collection represents a single unit objects, i.e, a group.
+
+** What is a framework in Java.
++ It provides readymade architecture.
++ It represents a set of classes and interfaces.
++ It is optional.
+
+** What is Collection Framework
+The collection framework represents a unified architecture for storing and manipulating a group of objects. It has:
+1. Interfaces and its implementations, i.e., classes
+2. Algorithm
+
+** Hierarchy of Collection Framework
+The *java.util* package contains all the =classes= and =interface= for the Collection framework.
+
+[[/media/xander/Backup/code/Notes/JAVA/img/javaCollectionHierarchy.png]]
+
+
+** Methods of Collection interface
+
+| Method                                                | Description                                                                                                     |
+|-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------|
+| public boolean add(E e)                               | It is used to insert an element in this collection.                                                             |
+| public boolean addAll(Collection<?extends E> c)       | It is used to insert the specified collection elements in the invoking collection.                              |
+| public boolean remove(Object element)                 | It is used to delete an element from the collection.                                                            |
+| public boolean removeAll(Collection<?> c)             | It is used to delete all the elements of the specified collection from the invoking collection.                 |
+| default boolean removeIf(Predicate<? super E> filter) | It is  used to delete all the elements of the collection that satisfy the specified predicate.                  |
+| public boolean retainAll(Collection<?> c)             | It is used to delete all the elements of invoking collection except the specified collection                    |
+| public int size()                                     | It returns the total number of elements in the collection.                                                      |
+| public void clear()                                   | It removes the total number of elements from the collection.                                                    |
+| public boolean contains(Object element)               | It is used to search an element.                                                                                |
+| public boolean containsAll(Collection<?> c)           | It is used to search the specified collection in the collection.                                                |
+| public Iterator iterator()                            | It returns an iterator                                                                                          |
+| public Object[] toArray()                             | It converts collection into array.                                                                              |
+| public <T> T[] toArray(T[] a)                         | It converts collection into array. Here, the runtime type of the returned array is that of the specified array. |
+| public boolean isEmpty()                              | It check if collection is empty.                                                                                |
+| default Stream<E> parallelStream()                    | It returns a possible parallel Stream with the collection as its source.                                        |
+| default Stream<E> stream()                            | it return a sequential Stream with the collection as its source.                                                |
+| default Spliterator<E> spliterator()                  | It generates a Spliterator over the specified elements in the collection.                                       |
+| public boolean equals(Object element)                 | It matches two collections.                                                                                     |
+| public int hashCode()                                 | It returns the hash code number of the collection                                                               |
+
+** Iterator Interface
+Iterator interface provides the facility of iterating the elements in a forward direction only.
+
+*** Methods of iterator interface.
+
+| Method                   | Description                                                                   |
+|--------------------------+-------------------------------------------------------------------------------|
+| public boolean hasNext() | It returns true if the iterator has more elements otherwise it returns false. |
+| public Object next()     | It returns the element and moves the cursor pointer to the next elements.     |
+| public void remove()     | It removes the last elements returned by the iterator. It is less used.       |
+
+** Iterable Interface
+The Iterable interface is the root interface for all the collection classes. The Collection interface extends the Iterable interface and therefore all the subclasses of collection interface also implement the Iterable interface.
+
+It contains only one abstract method. i.e.,
+#+begin_example
+Iterator<T> iterator()
+#+end_example
+
+/It returns the iterator over the elements of type T./
+
+** Collection Interface
++ The Collection interface is the interface which is implemented by all the classes in the collection framework. It declares the methods that every collection will have. In other words, we can say that the Collection interface builds the foundation on which the colleciton framework depends.
++ Some of the methods of Collection interface are Boolean add(Object obj), Boolean addAll(Collection c), void clear(), etc. which are implemented by all the subclasses of Collection interface.
+
+** List Interface
++ List interface is the child interface of Collection interface. It inhibits a list type data stucture in which we can store the ordered collection of objects. It can have duplicate values.
++ List interface is implemented by the classes ArrayList, LinkedList, Vector, and Stack.
++ To instantiate the List interface, we must use:
+
+#+begin_example
+List <data-type> list1= new ArrayList();  
+List <data-type> list2 = new LinkedList();  
+List <data-type> list3 = new Vector();  
+List <data-type> list4 = new Stack(); 
+#+end_example
+
++ There are various methods in List interface that can be used to insert, delete, and access the elements from the list.
++ The classes that implement the list interface are given below.
+
+** ArrayList
++ The ArrayList class implements the List interface.
++ It uses a dynamic array to store the duplicate element of different data types. 
++ The ArrayList class maintains the insertion order and is non-synchronized
+
++ The elements stored in the ArrayList class can be randomly accessed. Consider the following example.
+#+begin_src java
+import java.util.*;  
+class TestJavaCollection1{  
+    public static void main(String args[]){  
+        ArrayList<String> list=new ArrayList<String>();
+        list.add("Ravi");
+        list.add("Vijay");  
+        list.add("Ravi");  
+        list.add("Ajay");  
+        Iterator itr=list.iterator();  
+        while(itr.hasNext()){  
+            System.out.println(itr.next());  
+        }  
+    }  
+}
+#+end_src
+
+#+begin_example output
+Ravi
+Vijay
+Ravi
+Ajay
+#+end_example
+
+** LinkedList
++ LinkedList implements the Collection interface. 
++ It uses a doubly linked list internally to store the elements. 
++ It can store the duplicate elements. 
++ It maintains the insertion order and is not synchronized. 
++ In LinkedList, the manipulation is fast because no shifting is required.
+
+Consider the following example.
+#+begin_src java
+import java.util.*;  
+public class TestJavaCollection2{  
+    public static void main(String args[]){  
+        LinkedList<String> al=new LinkedList<String>();  
+        al.add("Ravi");  
+        al.add("Vijay");  
+        al.add("Ravi");  
+        al.add("Ajay");  
+        Iterator<String> itr=al.iterator();  
+        while(itr.hasNext()){  
+            System.out.println(itr.next());  
+        }  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Ravi
+Vijay
+Ravi
+Ajay
+#+end_example
+
+** Vector
++ Vector uses a dynamic array to store the data elements. 
++ It is similar to ArrayList. 
++ However, It is synchronized and contains many methods that are not the part of Collection framework.
+
+Consider the following example.
+
+#+begin_src java
+import java.util.*;  
+public class TestJavaCollection3{  
+    public static void main(String args[]){  
+        Vector<String> v=new Vector<String>();  
+        v.add("Ayush");  
+        v.add("Amit");  
+        v.add("Ashish");  
+        v.add("Garima");  
+        Iterator<String> itr=v.iterator();  
+        while(itr.hasNext()){  
+            System.out.println(itr.next());  
+        }  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Ravi
+Vijay
+Ravi
+Ajay
+#+end_example
+
+** Stack
++ The stack is the subclass of Vector. 
++ It implements the last-in-first-out data structure, i.e., Stack. 
++ The stack contains all of the methods of Vector class and also provides its methods like boolean push(), boolean peek(), boolean push(object o), which defines its properties.
+
+Consider the following example.
+
+#+begin_src java
+import java.util.*;  
+public class TestJavaCollection4{  
+    public static void main(String args[]){  
+        Stack<String> stack = new Stack<String>();  
+        stack.push("Ayush");  
+        stack.push("Garvit");  
+        stack.push("Amit");  
+        stack.push("Ashish");  
+        stack.push("Garima");  
+        stack.pop();  
+        Iterator<String> itr=stack.iterator();  
+        while(itr.hasNext()){  
+            System.out.println(itr.next());  
+        }  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Ravi
+Vijay
+Ravi
+Ajay
+#+end_example
+
+** Queue interface
++ Queue interface maintains the first-in-first-out order. 
++ It can be defined as an ordered list that is used to hold the elements which are about to be processed. 
++ There are various classes like PriorityQueue, Deque, and ArrayDeque which implements the Queue interface.
+
+Queue interface can be instantiated as:
+
+#+begin_src java
+Queue<String> q1 = new PriorityQueue();  
+Queue<String> q2 = new ArrayDeque(); 
+#+end_src
+
++ There are various classes that implement the queue interface, some of them are given below.
+
+** PriorityQueue
++ The PriorityQueue class implements the Queue interface. 
++ It holds the elements or objects which are to be processed by their priorities. 
++ PriorityQueue doesn't allow null values to be stored in the queue.
+
+Consider the following example.
+
+#+begin_src java
+import java.util.*;  
+public class TestJavaCollection5{  
+    public static void main(String args[]){  
+        PriorityQueue<String> queue=new PriorityQueue<String>();  
+        queue.add("Amit Sharma");  
+        queue.add("Vijay Raj");  
+        queue.add("JaiShankar");  
+        queue.add("Raj");  
+        System.out.println("head:"+queue.element());  
+        System.out.println("head:"+queue.peek());  
+        System.out.println("iterating the queue elements:");  
+        Iterator itr=queue.iterator();  
+        while(itr.hasNext()){  
+            System.out.println(itr.next());  
+        }  
+        queue.remove();  
+        queue.poll();  
+        System.out.println("after removing two elements:");  
+        Iterator<String> itr2=queue.iterator();  
+        while(itr2.hasNext()){  
+            System.out.println(itr2.next());  
+        }  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+head:Amit Sharma
+head:Amit Sharma
+iterating the queue elements:
+Amit Sharma
+Raj
+JaiShankar
+Vijay Raj
+after removing two elements:
+Raj
+Vijay Raj
+#+end_example
+
+** Deque Interface
++ Deque interface extends the Queue interface. 
++ In Deque, we can remove and add the elements from both the side. Deque stands for a double-ended queue which enables us to perform the operations at both the ends.
+
+Deque can be instantiated as:
+
+#+begin_example
+Deque d = new ArrayDeque();
+#+end_example
+
+** ArrayDeque
++ ArrayDeque class implements the Deque interface. It facilitates us to use the Deque. Unlike queue, we can add or delete the elements from both the ends.
++ ArrayDeque is faster than ArrayList and Stack and has no capacity restrictions.
+
+Consider the following example.
+
+#+begin_src java
+import java.util.*;  
+public class TestJavaCollection6{  
+    public static void main(String[] args) {  
+        Deque<String> deque = new ArrayDeque<String>();  
+        deque.add("Gautam");  
+        deque.add("Karan");  
+        deque.add("Ajay");  
+        for (String str : deque) {  
+            System.out.println(str);  
+        }  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Gautam
+Karan
+Ajay
+#+end_example
+
+** Set interface
++ Set Interface in Java is present in java.util package. 
++ It extends the Collection interface. 
++ It represents the unordered set of elements which doesn't allow us to store the duplicate items. We can store at most one null value in Set. 
++ Set is implemented by HashSet, LinkedHashSet, and TreeSet.
+
+Set can be instantiated as:
+#+begin_example
+Set<data-type> s1 = new HashSet<data-type>();  
+Set<data-type> s2 = new LinkedHashSet<data-type>();  
+Set<data-type> s3 = new TreeSet<data-type>();  
+#+end_example
+
+** HashSet
++ HashSet class implements Set Interface. 
++ It represents the collection that uses a hash table for storage. 
++ Hashing is used to store the elements in the HashSet. 
++ It contains unique items.
+
+Consider the following example.
+#+begin_src java
+import java.util.*;  
+public class TestJavaCollection7{  
+    public static void main(String args[]){  
+        HashSet<String> set=new HashSet<String>();  
+        set.add("Ravi");  
+        set.add("Vijay");  
+        set.add("Ravi");  
+        set.add("Ajay");  
+        Iterator<String> itr=set.iterator();  
+        while(itr.hasNext()){  
+            System.out.println(itr.next());  
+        }  
+    }  
+}
+#+end_src
+
+#+begin_example output
+Vijay
+Ravi
+Ajay
+#+end_example
+
+** LinkedHashSet
++ LinkedHashSet class represents the LinkedList implementation of Set Interface. 
++ It extends the HashSet class and implements Set interface. Like HashSet, It also contains unique elements. 
++ It maintains the insertion order and permits null elements.
+
+Consider the following example.
+#+begin_src java
+import java.util.*;  
+public class TestJavaCollection8{  
+    public static void main(String args[]){  
+        LinkedHashSet<String> set=new LinkedHashSet<String>();  
+        set.add("Ravi");  
+        set.add("Vijay");  
+        set.add("Ravi");  
+        set.add("Ajay");  
+        Iterator<String> itr=set.iterator();  
+        while(itr.hasNext()){  
+            System.out.println(itr.next());  
+        }  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Ravi
+Vijay
+Ajay
+#+end_example
+
+** SortedSet Interface
++ SortedSet is the alternate of Set interface that provides a total ordering on its elements. 
++ The elements of the SortedSet are arranged in the increasing (ascending) order. 
++ The SortedSet provides the additional methods that inhibit the natural ordering of the elements.
+
+The SortedSet can be instantiated as:
+#+begin_example
+SortedSet<data-type> set = new TreeSet(); 
+#+end_example
+
+** TreeSet
++ Java TreeSet class implements the Set interface that uses a tree for storage. 
++ Like HashSet, TreeSet also contains unique elements. However, the access and retrieval time of TreeSet is quite fast. 
++ The elements in TreeSet stored in ascending order.
+
+Consider the following example:
+#+begin_src java
+import java.util.*;  
+public class TestJavaCollection9{  
+    public static void main(String args[]){  
+        TreeSet<String> set=new TreeSet<String>();  
+        set.add("Ravi");  
+        set.add("Vijay");  
+        set.add("Ravi");  
+        set.add("Ajay");  
+        Iterator<String> itr=set.iterator();  
+        while(itr.hasNext()){  
+            System.out.println(itr.next());  
+        }  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Ajay
+Ravi
+Vijay
+#+end_example
+
+* JAVA Stack
++ The *Stack* is a linear data structure that is used to store the collection of objects. 
++ It is based on *Last-In-First-Out*(LIFO). 
+
+[[./img/stack.png]]
+
+** JAVA Stack Class
++ In java, *Stack* is a class that falls under the Collection framwork that extends the *Vector* class. 
++ It also implements interface *List, Collection, Iterable, Cloneable, Serializable.*
++ It represents the LIFO Stack of objects. Before using the Stack class, we must import the =java.util= package. 
++ The stack class arranged in the Collection Framework hierarchy, as shown below.
+
+
+[[./img/stackclass.png]]
+
+** Stack Class Constructor
+The Stack class contains only the *default constructor* that creates an empty stack.
+#+begin_example
+public Stack()
+#+end_example
+
+** Creating a Stack
+If we want to create a stack, first, import the =java.util= package and create an object of the Stack class.
+#+begin_example
+Stack stk = new Stack();
+#+end_example
+
+Or
+#+begin_example
+Stack<type> stk = new Stack<>();
+#+end_example
+
+/Where type denotes the type of stack like Integer, String, etc./
+
+** Method of the Stack Class
+We can perform push, pop, peek and search operation on the stack. The java Stack class provides mainly five methods to perform these operations. Along with this, it also provides all the methods of the =Java Vector class=.
+
+| Method         | Modifier and Type | Method Description                                                    |
+|----------------+-------------------+-----------------------------------------------------------------------|
+| empty()        | boolean           | The method checks the stack is empty or not.                          |
+| push(E item)   | E                 | The method pushes(insert) an element onto the top of the stack.       |
+| pop()          | E                 | The method removes an element from the top of the stack and           |
+|                |                   | returns the same element as the value of that function.               |
+| peek()         | E                 | The method looks at the top element of the stack without removing it. |
+| search(Object) | int               | The method searches the specified object and return the position of   |
+|                |                   | the object.                                                           |
+
+** Stack Class empty() Method
+The =empty()= method of the stack class check the stack is empty or not. If the stack is empty, it returns true, else returns false. We can also use the *isEmpty() method of the Vector class.*
+
+*** Syntax
+#+begin_example
+public boolean empty()
+#+end_example
+
+*Returns:* /The method returns true if the stack is empty, else returns false./
+
+*** Program 
+#+begin_src java
+import java.util.Stack;  
+public class StackEmptyMethodExample  
+{  
+    public static void main(String[] args)   
+    {  
+        Stack<Integer> stk= new Stack<>();  
+        boolean result = stk.empty();  
+        System.out.println("Is the stack empty? " + result);  
+        stk.push(78);  
+        stk.push(113);  
+        stk.push(90);  
+        stk.push(120);  
+        System.out.println("Elements in Stack: " + stk);  
+        result = stk.empty();  
+        System.out.println("Is the stack empty? " + result);  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Is the stack empty? true
+Elements in Stack: [78, 113, 90, 120]
+Is the stack empty? false
+#+end_example
+
+** Stack Class push() Method
+The method inserts an item onto the top of the stack. It works the same as the method =addElement(item) method= of the vector class. It passes a parameter *item* to be pushed into the stack.
+
+*** Syntax
+#+begin_example
+public E push(E item)
+#+end_example
+
+*Parameter:* /An item to be pushed onto the top of the stack./
+*Returns:* /The method returns the argument that we have passed as a paramether./
+
+** Stack Class pop() Method
+The method removes an object at the top of the stack and returns the same object. It throws *EmptyStackException* if the stack is empty.
+
+*** Syntax
+#+begin_example
+public E pop()
+#+end_example
+
+*Returns:* /It returns an object that is at the top of the stack./
+
+*** Program
+#+begin_src java
+import java.util.*;  
+public class StackPushPopExample   
+{  
+    public static void main(String args[])   
+    {  
+        Stack <Integer> stk = new Stack<>();  
+        System.out.println("stack: " + stk);  
+        pushelmnt(stk, 20);  
+        pushelmnt(stk, 13);  
+        pushelmnt(stk, 89);  
+        pushelmnt(stk, 90);  
+        pushelmnt(stk, 11);  
+        pushelmnt(stk, 45);  
+        pushelmnt(stk, 18);  
+        popelmnt(stk);  
+        popelmnt(stk);  
+        try   
+        {  
+            popelmnt(stk);  
+        }   
+        catch (EmptyStackException e)   
+        {  
+            System.out.println("empty stack");  
+        }  
+    }  
+    static void pushelmnt(Stack stk, int x)   
+    {  
+        stk.push(new Integer(x));  
+        System.out.println("push -> " + x);  
+        System.out.println("stack: " + stk);  
+    }  
+    static void popelmnt(Stack stk)   
+    {  
+        System.out.print("pop -> ");  
+        Integer x = (Integer) stk.pop();  
+        System.out.println(x);  
+        System.out.println("stack: " + stk);  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+stack: []
+push -> 20
+stack: [20]
+push -> 13
+stack: [20, 13]
+push -> 89
+stack: [20, 13, 89]
+push -> 90
+stack: [20, 13, 89, 90]
+push -> 11
+stack: [20, 13, 89, 90, 11]
+push -> 45
+stack: [20, 13, 89, 90, 11, 45]
+push -> 18
+stack: [20, 13, 89, 90, 11, 45, 18]
+pop -> 18
+stack: [20, 13, 89, 90, 11, 45]
+pop -> 45
+stack: [20, 13, 89, 90, 11]
+pop -> 11
+stack: [20, 13, 89, 90]
+#+end_example
+
+** Stack Class peek() Method
+It looks at the element that is at the top in the stack. It also throws *EmptyStackException* if the stack is empty.
+
+*** Syntax
+#+begin_example
+public E peek()
+#+end_example
+
+*Returns:* /It returns the top elements of the stack./
+
+*** Program
+#+begin_src java
+import java.util.Stack;  
+public class StackPeekMethodExample   
+{  
+    public static void main(String[] args)   
+    {  
+        Stack<String> stk= new Stack<>();  
+        stk.push("Apple");  
+        stk.push("Grapes");  
+        stk.push("Mango");  
+        stk.push("Orange");  
+        System.out.println("Stack: " + stk);  
+        String fruits = stk.peek();  
+        System.out.println("Element at top: " + fruits);  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Stack: [Apple, Grapes, Mango, Orange]
+Element at the top of the stack: Orange
+#+end_example
+
+** Stack Class search() Method
+The method searches the object in the stack from the top. It parses a parameter that we want to search for. It returns the 1-based location of the object in the stack. These topmost object of the stack is considered at distance 1.
+
+Suppose, o is an object in the stack that we want to search for. The method returns the distance from the top of the stack of the occurrence nearest the top of the stack. it uses *equals()* method to search an object in the stack.
+
+*** Syntax
+#+begin_example
+public int search(Object o)
+#+end_example
+
+*Paramether:* /o is the desired object to be searched./
+*Returns:* /It returns the object location from the top of the stack. If it returns -1, it means that the object is not on the stack./
+
+*** Program
+#+begin_src java
+import java.util.Stack;  
+public class StackSearchMethodExample  
+{  
+    public static void main(String[] args)   
+    {  
+        Stack<String> stk= new Stack<>();  
+        stk.push("Mac Book");  
+        stk.push("HP");  
+        stk.push("DELL");  
+        stk.push("Asus");  
+        System.out.println("Stack: " + stk);  
+        int location = stk.search("HP");  
+        System.out.println("Location of Dell: " + location);  
+    }  
+}  
+#+end_src
+
+** Java Stack Operations
+*** Size of the Stack
+We can also find the size of the stack using the =size() method of the Vector class=. It returns the total number of elements(size of the stack) in the stack.
+
+**** Syntax
+#+begin_example
+public int size()
+#+end_example
+
+**** Program
+#+begin_src java
+import java.util.Stack;  
+public class StackSizeExample   
+{    
+    public static void main (String[] args)   
+    {   
+        Stack stk = new Stack();  
+        stk.push(22);  
+        stk.push(33);  
+        stk.push(44);  
+        stk.push(55);  
+        stk.push(66);  
+        boolean rslt=stk.empty();  
+        System.out.println("Is the stack empty or not? " +rslt);  
+        int x=stk.size();  
+        System.out.println("The stack size is: "+x);  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Is the stack empty or not? false
+The stack size is: 5
+#+end_example
+
+*** Iterate Elements
+Iterate means to fetch the elements of the stack. We can fetch elements of the stack using three different methods are as follows:
++ Using *iterator()* Method.
++ Using *forEach()* Method.
++ Using *listIterator()* Method.
+
+*** Using the iterator() Method
+It is the method of the iterator interface. It returns an iterator over the elements in the stack. Before using the iterator() method import the =java.util.Iterator= package.
+
+**** Syntax
+#+begin_example
+Iterator<T> iterator()
+#+end_example
+
+**** Program
+#+begin_src java
+import java.util.Iterator;  
+import java.util.Stack;  
+public class StackIterationExample1   
+{     
+    public static void main (String[] args)   
+    {   
+        Stack stk = new Stack();  
+        stk.push("BMW");  
+        stk.push("Audi");  
+        stk.push("Ferrari");  
+        stk.push("Bugatti");  
+        stk.push("Jaguar");  
+        Iterator iterator = stk.iterator();  
+        while(iterator.hasNext())  
+        {  
+            Object values = iterator.next();  
+            System.out.println(values);   
+        }     
+    }  
+}  
+#+end_src
+
+#+begin_example output
+BMW
+Audi
+Ferrari
+Bugatti
+Jaguar
+#+end_example
+
+*** Using the forEach() Method
+Java provides a forEach() method to iterate over the elements. The method is defined in the *Iterable* and *Stream* interface.
+
+**** Syntax
+#+begin_example
+default void forEach(Consumer<super T>action)
+#+end_example
+
+**** Program
+#+begin_src java
+import java.util.*;  
+public class StackIterationExample2  
+{  
+    public static void main (String[] args)   
+    {   
+        Stack <Integer> stk = new Stack<>();  
+        stk.push(119);  
+        stk.push(203);  
+        stk.push(988);  
+        System.out.println("Iteration over the stack using forEach() Method:");  
+        stk.forEach(n ->  
+        {  
+            System.out.println(n);  
+        });  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Iteration over the stack using forEach() Method:
+119
+203
+988
+#+end_example
+
+*** Using ListIterator() Method
+This method returns a list iterator over the elements in the mentioned list(in Sequence), Starting at the specified position in the list. It iterates the stack from top to bottom.
+
+**** Syntax
+#+begin_example
+ListIterator listiterator(int index)
+#+end_example
+
+*Parameter:* /The method parses a parameter named *index*./
+*Returns:* /This method returns a list iterator over the elements, in sequence./
+*Exception:* /It throws *IndexOutOfBoundsException* if the index is out of range./
+
+**** Program
+#+begin_src java
+import java.util.Iterator;  
+import java.util.ListIterator;  
+import java.util.Stack;  
+   
+public class StackIterationExample3  
+{  
+    public static void main (String[] args)   
+    {   
+        Stack <Integer> stk = new Stack<>();  
+        stk.push(119);  
+        stk.push(203);  
+        stk.push(988);  
+        ListIterator<Integer> ListIterator = stk.listIterator(stk.size());  
+        System.out.println("Iteration over the Stack from top to bottom:");  
+        while (ListIterator.hasPrevious())   
+        {  
+            Integer avg = ListIterator.previous();  
+            System.out.println(avg);  
+        }  
+    }  
+}  
+#+end_src
+
+#+begin_example
+Iteration over the Stack from top to bottom:
+988
+203
+119
+#+end_example
+
+* JAVA ArrayList
++ Java *ArrayList* class uses a dynamic array for storing the elements. It is like an array, but there is /no size limit./ 
++ It is found in the =java.util= package.
++ The important points about the java ArrayList class are:
+  - Java ArrayList class can contain duplicate elements.
+  - Java ArrayList class maintains insertion order.
+  - java ArrayList class is non *synchronized*.
+  - java ArrayList allows random access because the array works on an index basis.
+  - In ArrayList, manipulation is a little bit slower than the LinkedList in java because a lot of shifting needs to occur if any element is removed from the array list.
+  - We can not create an array list of the Primitive types, such as int, float, char etc. It is required to use the required wrapper class in such class in such cases. for example.
+#+begin_example
+ArrayList<int> al = ArrayList<int>(); // does not work  
+ArrayList<Integer> al = new ArrayList<Integer>(); // works fine  
+#+end_example
+
+  - Java ArrayList get initialized by the size. The size is dynamic in the array list, which varies according to the elements getting added or removed from the list.
+ 
+[[./img/arraylist.png]]
+
+** Hierarchy of ArrayList class
+As shown in the above diagram, the java arraylist class extends AbstractList class which implements the list interface. The list interface extends the =Collection= and Iterable interfaces in hierarchical order.
+
+** ArrayList class declaration
+declaration for =java.util.ArrayList= class.
+#+begin_example
+public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, Serializable
+#+end_example
+
+*** Constructor of ArrayList
+| Constructor                          | Description                                                                                  |
+|--------------------------------------+----------------------------------------------------------------------------------------------|
+| ArrayList()                          | It is used to build an empty array list.                                                     |
+| ArrayList(Collection<? extends E> c) | It is used to build an array list that is initialized with the elements of the collection c. |
+| ArrayList(int capacity)              | It is used to build an array list that has the specified initial capacity.                   |
+
+*** Methods of ArrayList
+
+| Method                                                 | Description                                                                                 |
+|--------------------------------------------------------+---------------------------------------------------------------------------------------------|
+| void add(int index, E element)                         | It is used to insert the specified element at the specified position in a list.             |
+| boolean add(E e)                                       | It is used to append the specified element at the end of a list.                            |
+| boolean addAll(Collection<? extends E> c)              | It is used to append all of the elements in the specified collection to the end             |
+|                                                        | of this list, in the order that they are returned by the specified collection's             |
+|                                                        | iterator.                                                                                   |
+| boolean addAll(int index, Collection<? extends E> c)   | it is used to append all the elements in the specified collection, starting at the          |
+|                                                        | specified position of the list.                                                             |
+| void clear()                                           | It is used to remove all of the elements from this list.                                    |
+| void ensureCapacity(int requiredCapacity)              | It is used to enhance the capacity of an arraylist instance.                                |
+| E get(int index)                                       | It is used to fetch the element from the particular position of the list.                   |
+| boolean isEmpty()                                      | It returns true if the list is empty, otherwise false.                                      |
+| Iterator()                                             |                                                                                             |
+| listIterator()                                         |                                                                                             |
+| int lastIndexOf(Object o)                              | It is used to return the index in this list of the last occurrence of the specified         |
+|                                                        | element, or -1 if the list does not contain this element.                                   |
+| Object[] toArray()                                     | It is used to return an array containing all of the elements in this list in the            |
+|                                                        | correct order.                                                                              |
+| <T> T[] toArray(T[] a)                                 | It is used to return an array containing all of the elements in this list in the            |
+|                                                        | correct order.                                                                              |
+| Object clone()                                         | It is used to return a shallow copy of an ArrayList.                                        |
+| boolean contains(Object o)                             | It returns true if the list contains the specified elements.                                |
+| int indexOf(Object o)                                  | It is used to return the index in this list of the first occurrence of the                  |
+|                                                        | specified element, or -1 if the list does not contain this element.                         |
+| E remove(int index)                                    | It is used to remove the element present at the specified position in the list              |
+| boolean remove(Object o)                               | It is used to remove the first occurrence of the spcified element.                          |
+| boolean removeAll(Colection<?> c)                      | It is used to remove all the elements from the list.                                        |
+| boolean removeIf(Predicate<? super E> filter)          | It is used to remove all the elements from the list that satisfies the given predicte.      |
+| protected void removeRange(int fromIndex, int toIndex) | It is used to remove all the elements lies within the given range.                          |
+| void replaceAll(UnaryOperator<E> operator)             | It is used to replace all the elements from the list with the specified elements.           |
+| void retainAll(Collection<?> c)                        | It is used to replace all the elements in the list that are present in the specified        |
+|                                                        | collection.                                                                                 |
+| E set(int index, E element)                            | It is used to replace the specified element in the list, present at the specified position. |
+| void sort(Comparator<? super E> c)                     | It is used to sort the elements of the list on the basis of the specified comparator.       |
+| Spliterator<E> spliterator()                           | It is used to create a spliterator over the elements in a list.                             |
+| List<E> subList(int fromIndex, int toIndex)            | It is used to fetch all the elements that lies within the given range.                      |
+| int size()                                             | It is used to return the number of elements present in the list.                            |
+| void trimToSize()                                      | It is used to trim the capacity of this ArrayList instance to be the list's current size.   |
+
+** Java Non-generic Vs Generic Collection
+
++ Creating old non-generic arraylist
+#+begin_example
+ArrayList list = new ArrayList();
+#+end_example
+
++ Creating new generic arraylist
+#+begin_example
+ArrayList<String> list = new ArrayList<String>();
+#+end_example
+
+** Java ArrayList Example
+#+begin_src java
+import java.util.*;
+public class ArrayListExample1{
+    public static void main(String args[]){
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("mango");
+        list.add("apple");
+        list.add("Banana");
+        list.add("Grapes");
+        System.out.println(list);
+    }
+}
+#+end_src
+
+#+begin_example output
+[Mango, Apple, Banana, Grapes]
+#+end_example
+
+** Iterating ArrayList using For-each loop
+#+begin_src java
+for(String fruit:list){
+    System.out.println(fruit);
+}
+#+end_src
+
+#+begin_example output
+Mango
+Apple
+Banana
+Grapes
+#+end_example
+
+** Get and Set ArrayList
+The *get()* method returns the element at the specified index, whereas the *set()* method changes the element.
+
+#+begin_src java
+import java.util.*;  
+public class ArrayListExample4{  
+    public static void main(String args[]){  
+        ArrayList<String> al=new ArrayList<String>();  
+        al.add("Mango");  
+        al.add("Apple");  
+        al.add("Banana");  
+        al.add("Grapes");  
+        System.out.println("Returning element: "+al.get(1));
+        al.set(1,"Dates");  
+        for(String fruit:al)    
+            System.out.println(fruit);    
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Returning element: Apple
+Mango
+Dates
+Banana
+Grapes
+#+end_example
+
+** Sort Arraylist
+The =java.util= package provides a utility class *Collections*, which has the static method sort(). Using the =Collections.sort()= method, we can easily sort the ArrayList.
+
+#+begin_src java
+import java.util.*;  
+class SortArrayList{  
+    public static void main(String args[]){  
+        List<String> list1=new ArrayList<String>();  
+        list1.add("Mango");  
+        list1.add("Apple");  
+        list1.add("Banana");  
+        list1.add("Grapes");  
+
+        Collections.sort(list1);  
+
+        for(String fruit:list1)  
+            System.out.println(fruit);  
+
+        System.out.println("Sorting numbers...");  
+        List<Integer> list2=new ArrayList<Integer>();  
+        list2.add(21);  
+        list2.add(11);  
+        list2.add(51);  
+        list2.add(1);  
+        Collections.sort(list2);  
+        for(Integer number:list2)  
+            System.out.println(number);  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Apple
+Banana
+Grapes
+Mango
+Sorting numbers...
+1
+11
+21
+51
+#+end_example
+
+* JAVA LinkedList Class
+Java LinkedList class uses a duble linked list to store the elements. I provieds a linked-list data structure. It inherits the AbstractList class and implements List and Deque interface.
+
+[[./img/linkedlist.png]]
+
+** Hierarchy of LinkedList class
+Java LinkedList class extends AbstractSequentialList class and implements list and deque interface.
+
+*** Double Linked List
+In the case of a double linked list, we can add or remove elements from both sides.
+
+[[./img/doublylinkedlist.png]]
+
+** LinkedList class declaration
+declaration for =java.util.LinkedList= class.
+#+begin_example
+public class LinkedList<E> extends AbstractSequentiall
+#+end_example
+
+** Constructors of Java LinkedList
+
+| Constructor                           | Description                                                                                                                                       |
+|---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------|
+| LinkedList()                          | It is used to construct an empty list.                                                                                                            |
+| LinkedList(Collection<? extends E> c) | It is used to construct a list containing the elements of the specified collection, in the order, they are returned by the collection's iterator. |
+
+** Methods of Java LinkedList
+
+| Method                                               | Description                                                                                  |
+|------------------------------------------------------+----------------------------------------------------------------------------------------------|
+| boolean add(E e)                                     | It is used to append the specified element to the end of list.                               |
+| void add(int index, E element)                       | It is used to insert the specified element at the specified position index in a list.        |
+| boolean addAll(Collection<? extends E> c)            | It is used to append all the elements in the specified colleciton to the end of this list.   |
+| boolean addAll(Collection<? extends E> c)            | It is used to append all of the elements in the specified collection to the end of the list. |
+| boolean addAll(int index, Colleciton<? extends E> c) | It is used to append all the elements in the specified collection.                           |
+| void addFirst(E e)                                   | It is used to insert the given element at the beginning of a list.                           |
+| void addLast(E e)                                    | It is used to append the given element to the end of a list.                                 |
+| void clear()                                         | It is used to remove all the elements from a list.                                           |
+| Object clone()                                       | It is used to return a shallow copy of an ArrayList.                                         |
+| boolean contains(Object o)                           | It is used to return true if a list contains a specified element.                            |
+| Iterator<E> descendingIterator()                     | It is used to return an iterator over the elements in a deque in reverse sequential order.   |
+| E element()                                          | It is used to retrieve the first element of a list.                                          |
+| E get(int index)                                     | It is used to return the element at the specified position in a list.                        |
+| E getFirst()                                         | It is used to return the first element in a list.                                            |
+| E getLast()                                          | It is used to return the last elements in a list.                                            |
+| int indexOf(Object o)                                | It is used to return the index in a list of the first occurrence of the specified element,   |
+| int lastIndexOf(Object o)                            | It is used to return the index in a last occurrence of the specified element.                |
+| ListIterator<E> listIterator(int index)              | It is used to return a list-iterator of the elements in proper sequence,                     |
+|                                                      | starting at the specified position in the list                                               |
+| boolean offer(E e)                                   | It adds the specified element as the last element of a list.                                 |
+| boolean offerFirst(E e)                              | It inserts the specified element at the front of a list.                                     |
+| boolean offerLast(E e)                               | It inserts the specified element at the end of the list.                                     |
+| E peek()                                             | It retrieves the first element of a list.                                                    |
+| E peekLast()                                         | It retrieves the last element of a list or returns null if a list is empty.                  |
+| E pop()                                              | It pops an element from the stack represented by a list.                                     |
+| void push(E e)                                       | It pushes an element onto the stack represented by a list.                                   |
+| E remove()                                           | It is used to remove the element at the specified position in a list.                        |
+| boolean remove(Object o)                             | It is used to remove the first occurrence of the specified element in a list.                |
+| E removeFirst()                                      | It removes and returns the first element from a list.                                        |
+| boolean removeFirstOccurrence(Object o)              | It is used to remove the first occurrence of the specified element in a list.                |
+| E removeLast()                                       | It removes and returns the last element from the list.                                       |
+| boolean removeLastOccurrence(Object o)               | It removes teh last occurrence of the specified element in a list.                           |
+| E set(int index, E element)                          | It replaces the element at the specified position in a list with the specified element.      |
+| Object[] toArray()                                   | It is used to return an array containing all the elements in a list in proper sequence       |
+| <T> T[] toArray(T[] a)                               | It returns an array containing all the elements in the proper sequence, the runtime type     |
+|                                                      | of the returned array is that of the specified array.                                        |
+| int size()                                           | It is used to return the number of elements in a list.                                       |
+
+** Java LinkedList Example
+#+begin_src java
+import java.util.*;  
+public class LinkedList1{  
+    public static void main(String args[]){  
+        LinkedList<String> al=new LinkedList<String>();  
+        al.add("Ravi");  
+        al.add("Vijay");  
+        al.add("Ravi");  
+        al.add("Ajay");  
+        Iterator<String> itr=al.iterator();  
+        while(itr.hasNext()){  
+        System.out.println(itr.next());  
+        }  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Ravi
+Vijay
+Ravi
+Ajay
+#+end_example
+
+** Java LinkedList example to add elements
+#+begin_src java
+import java.util.*;  
+public class LinkedList2{  
+    public static void main(String args[]){  
+        LinkedList<String> ll=new LinkedList<String>();  
+        System.out.println("Initial list of elements: "+ll);  
+        ll.add("Ravi");  
+        ll.add("Vijay");  
+        ll.add("Ajay");  
+        System.out.println("After invoking add(E e) method: "+ll);  
+        ll.add(1, "Gaurav");  
+        System.out.println("After invoking add(int index, E element) method: "+ll);  
+        LinkedList<String> ll2=new LinkedList<String>();  
+        ll2.add("Sonoo");  
+        ll2.add("Hanumat");  
+        ll.addAll(ll2);  
+        System.out.println("After invoking addAll(Collection<? extends E> c) method: "+ll);  
+        LinkedList<String> ll3=new LinkedList<String>();  
+        ll3.add("John");  
+        ll3.add("Rahul");  
+        ll.addAll(1, ll3);  
+        System.out.println("After invoking addAll(int index, Collection<? extends E> c) method: "+ll);  
+        ll.addFirst("Lokesh");  
+        System.out.println("After invoking addFirst(E e) method: "+ll);  
+        ll.addLast("Harsh");  
+        System.out.println("After invoking addLast(E e) method: "+ll);  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Initial list of elements: []
+After invoking add(E e) method: [Ravi, Vijay, Ajay]
+After invoking add(int index, E element) method: [Ravi, Gaurav, Vijay, Ajay]
+After invoking addAll(Collection<? extends E> c) method: 
+[Ravi, Gaurav, Vijay, Ajay, Sonoo, Hanumat]
+After invoking addAll(int index, Collection<? extends E> c) method: 
+[Ravi, John, Rahul, Gaurav, Vijay, Ajay, Sonoo, Hanumat]
+After invoking addFirst(E e) method: 
+[Lokesh, Ravi, John, Rahul, Gaurav, Vijay, Ajay, Sonoo, Hanumat]
+After invoking addLast(E e) method: 
+[Lokesh, Ravi, John, Rahul, Gaurav, Vijay, Ajay, Sonoo, Hanumat, Harsh]
+#+end_example
+
+** Java LinkedList example to remove elements
+
+#+begin_src java
+import java.util.*;  
+public class LinkedList3 {  
+    public static void main(String [] args)  
+    {  
+        LinkedList<String> ll=new LinkedList<String>();  
+        ll.add("Ravi");  
+        ll.add("Vijay");  
+        ll.add("Ajay");  
+        ll.add("Anuj");  
+        ll.add("Gaurav");  
+        ll.add("Harsh");  
+        ll.add("Virat");  
+        ll.add("Gaurav");  
+        ll.add("Harsh");  
+        ll.add("Amit");  
+        System.out.println("Initial list of elements: "+ll);  
+        ll.remove("Vijay");  
+        System.out.println("After invoking remove(object) method: "+ll);   
+        ll.remove(0);  
+        System.out.println("After invoking remove(index) method: "+ll);   
+        LinkedList<String> ll2=new LinkedList<String>();  
+        ll2.add("Ravi");  
+        ll2.add("Hanumat");  
+        ll.addAll(ll2);  
+        System.out.println("Updated list : "+ll);   
+        ll.removeAll(ll2);  
+        System.out.println("After invoking removeAll() method: "+ll);   
+        ll.removeFirst();  
+        System.out.println("After invoking removeFirst() method: "+ll);  
+        ll.removeLast();  
+        System.out.println("After invoking removeLast() method: "+ll);  
+        ll.removeFirstOccurrence("Gaurav");  
+        System.out.println("After invoking removeFirstOccurrence() method: "+ll);  
+        ll.removeLastOccurrence("Harsh");  
+        System.out.println("After invoking removeLastOccurrence() method: "+ll);  
+
+        ll.clear();  
+        System.out.println("After invoking clear() method: "+ll);   
+    }  
+}     
+#+end_src
+
+#+begin_example output
+Initial list of elements: [Ravi, Vijay, Ajay, Anuj, Gaurav, Harsh, Virat, Gaurav, Harsh, Amit]
+After invoking remove(object) method: [Ravi, Ajay, Anuj, Gaurav, Harsh, Virat, Gaurav, Harsh, Amit]
+After invoking remove(index) method: [Ajay, Anuj, Gaurav, Harsh, Virat, Gaurav, Harsh, Amit]
+Updated list : [Ajay, Anuj, Gaurav, Harsh, Virat, Gaurav, Harsh, Amit, Ravi, Hanumat]
+After invoking removeAll() method: [Ajay, Anuj, Gaurav, Harsh, Virat, Gaurav, Harsh, Amit]
+After invoking removeFirst() method: [Gaurav, Harsh, Virat, Gaurav, Harsh, Amit]
+After invoking removeLast() method: [Gaurav, Harsh, Virat, Gaurav, Harsh]
+After invoking removeFirstOccurrence() method: [Harsh, Virat, Gaurav, Harsh]
+After invoking removeLastOccurrence() method: [Harsh, Virat, Gaurav]
+After invoking clear() method: []
+#+end_example
+
+** Java LinkedList example to reverse a list of elements
+
+#+begin_src java
+import java.util.*;  
+public class LinkedList4{  
+    public static void main(String args[]){  
+        LinkedList<String> ll=new LinkedList<String>();  
+        ll.add("Ravi");  
+        ll.add("Vijay");  
+        ll.add("Ajay");  
+        Iterator i=ll.descendingIterator();  
+        while(i.hasNext())  
+        {  
+            System.out.println(i.next());  
+        }  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Ajay
+Vijay
+Ravi
+#+end_example
+
+** Java LinkedList Example: Book
+
+#+begin_src java
+import java.util.*;  
+class Book {  
+    int id;  
+    String name,author,publisher;  
+    int quantity;  
+    public Book(int id, String name, String author, String publisher, int quantity) {  
+        this.id = id;  
+        this.name = name;  
+        this.author = author;  
+        this.publisher = publisher;  
+        this.quantity = quantity;  
+    }  
+}  
+public class LinkedListExample {  
+    public static void main(String[] args) {  
+        List<Book> list=new LinkedList<Book>();  
+        Book b1=new Book(101,"Let us C","Yashwant Kanetkar","BPB",8);  
+        Book b2=new Book(102,"Data Communications & Networking","Forouzan","Mc Graw Hill",4);  
+        Book b3=new Book(103,"Operating System","Galvin","Wiley",6);  
+        list.add(b1);  
+        list.add(b2);  
+        list.add(b3);  
+        for(Book b:list){  
+            System.out.println(b.id + " " + b.name + " " + b.author + " " + b.publisher + " " + b.quantity);  
+        }  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+101 Let us C Yashwant Kanetkar BPB 8
+102 Data Communications & Networking Forouzan Mc Graw Hill 4
+103 Operating System Galvin Wiley 6
+#+end_example
+
+* Difference Between ArrayList and LinkedList
+
++ ArrayList and LinkedList both implement the List interface and maintain insertion order. Both are non-synchronized classes.
+
+| No | ArrayList                                             | LinkedList                                                         |
+|----+-------------------------------------------------------+--------------------------------------------------------------------|
+|  1 | ArrayList internally uses a *dynamic array* to store  | LinkedList internally uses a *doubly linked list* to store the     |
+|    | the elements.                                         | elements                                                           |
+|  2 | Manipulation with ArrayList is *slow* because it      | Manipulation with LinkedList is *faster* than ArrayList because    |
+|    | internally uses an array. If any element is removed   | it uses a doubly linked list, so no bit shifting is required       |
+|    | from the array, all the other elements are shifted in | in memory.                                                         |
+|    | memory.                                               |                                                                    |
+|  3 | An ArrayList class can *act as a list* only because   | LinkedList class can *act as a list and queue* both because it     |
+|    | it implement List only.                               | implements List and Deque interface.                               |
+|  4 | ArrayList is *better for storing and accessing* data  | LinkedList is *better for manipulating* data.                      |
+|  5 | The memory location for the elements of an Arraylist  | The location for the elements of a linked list is not contagious   |
+|    | is contiguous.                                        |                                                                    |
+|  6 | Generally, when an Arraylist is initialized, a        | There is no case of default capacity in a linkedlist. In linked    |
+|    | default capacity of 10 is assigned to the Arraylist   | list, an empty list is created when an LinkedList is initialized.  |
+|  7 | To be precise, an ArrayList is a resizable array      | LinkedList implement the double linked list of the list interface. |
+
+* Java List
++ *List* in java provides the facility to maintain the /ordered collection./
++ It can have the duplicate elements also. We can also store the null elements in the list.
++ The list interface is found in the =java.util= package and inherits the Collection interface.
++ It is a factory of ListIterator interface.
++ The implementation classes of List interface are *ArrayList*, *LinkedList*, *Stack* and *Vector*.
+
+** List Interface declaration
+#+begin_example
+public interface List<E> extends Collection<E>
+#+end_example
+
+** Java List Methods
+
+| Method                                               | Description                                                                          |
+|------------------------------------------------------+--------------------------------------------------------------------------------------|
+| void add(int index, E element)                       | It is used to insert at the specified position in a list.                            |
+| boolean add(E e)                                     | It is used to append the specified element at the end of a list.                     |
+| boolean addAll(Collection<? extends E> c)            | It is uesd to append all of the elements in the specified collection to the end      |
+|                                                      | of a list.                                                                           |
+| boolean addAll(int index, Colleciton<? extends E> c) | It is used to append all the elements in the specified collection, starting at       |
+|                                                      | the specified position of the list.                                                  |
+| void clear()                                         | It is used to remove all of the elements from this list.                             |
+| boolean equals(Object o)                             | It is used to compare the specified object with the elements of a list.              |
+| int hashcode()                                       | It is used to return the hash code value for a list.                                 |
+| E get(int index)                                     | It is used to fetch the element from the particular position of the list.            |
+| boolean isEmpty()                                    | It returns true if the list is empty, otherwise false.                               |
+| int lastIndexOf(Object o)                            | It is used to return the index in this list of the last occurrence of the specified  |
+|                                                      | element, or -1 if the list does not contain this element.                            |
+| Object[] toArray()                                   | It is used to return an array containing all of the elements in this list in the     |
+|                                                      | correct order.                                                                       |
+| <T> T[] toArray(T[] a)                               | It is used to return an array containing all of the elements in this list in the     |
+|                                                      | correct order.                                                                       |
+| boolean contains(Object o)                           | It return true if the list contains the specified element.                           |
+| boolean containsAll(Collection<?> c)                 | It returns true if the list contains all the specified elements.                     |
+| int indexOf(Object o)                                | It is used to return the index in this list of the first occurrence of the specified |
+|                                                      | element, or -1 if the List does not contain this element.                            |
+| E remove(int index)                                  | It is used to remove the element present at the specified position in the list.      |
+| boolean remove(Object o)                             | It is used to remove the first occurrence of the specified element.                  |
+| boolean removeAll(Collection<?> c)                   | It is used to remove all the elements from the list.                                 |
+| void replaceAll(UnaryOperator<E> operator)           | It is used to replace all the elements from the list with the specified element.     |
+| void retainAll(Collection<?> c)                      | It is used to retain all the elements in the list that are present in the specified  |
+|                                                      | collection.                                                                          |
+| E set(int index, E element)                          | It is used to replace the specified element in the list, present at the specified    |
+|                                                      | position.                                                                            |
+| void sort(Comparator<? super E> c)                   | It is used to sort the elements of the list on the basis of specified comparator.    |
+| Spliterator<E> spliterator()                         | It is used to create spliterator over the elements in a list.                        |
+| List<E> subList(int fromIndex, int toIndex)          | It is used to fetch all the elements lies within the given range.                    |
+| int size()                                           | It is used to return the number of elements present in the list.                     |
+
+** Java List vs ArrayList
+List is an interface whereas ArrayList is the implementation class of List.
+
+** Create List
+#+begin_example
+//Creating a List of type String using ArrayList  
+List<String> list=new ArrayList<String>();  
+  
+//Creating a List of type Integer using ArrayList  
+List<Integer> list=new ArrayList<Integer>();  
+  
+//Creating a List of type Book using ArrayList  
+List<Book> list=new ArrayList<Book>();  
+  
+//Creating a List of type String using LinkedList  
+List<String> list=new LinkedList<String>();  
+#+end_example
+
+** Java List example
+#+begin_src java
+import java.util.*;  
+public class ListExample1{  
+    public static void main(String args[]){  
+        List<String> list=new ArrayList<String>();  
+        list.add("Mango");  
+        list.add("Apple");  
+        list.add("Banana");  
+        list.add("Grapes");  
+        for(String fruit:list)  
+            System.out.println(fruit);  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Mango
+Apple
+Banana
+Grapes
+#+end_example
+
+** Convert Array to List
+#+begin_src java
+import java.util.*;  
+public class ArrayToListExample{  
+    public static void main(String args[]){  
+        String[] array={"Java","Python","PHP","C++"};  
+        System.out.println("Printing Array: "+Arrays.toString(array));  
+        List<String> list=new ArrayList<String>();  
+        for(String lang:array){  
+            list.add(lang);  
+        }  
+        System.out.println("Printing List: "+list);  
+    }  
+}  
+#+end_src
+
+#+begin_example java
+Printing Array: [Java, Python, PHP, C++]
+Printing List: [Java, Python, PHP, C++]
+#+end_example
+
+** Convert List to Array
+
+#+begin_src java
+import java.util.*;  
+public class ListToArrayExample{  
+    public static void main(String args[]){  
+        List<String> fruitList = new ArrayList<>();    
+        fruitList.add("Mango");    
+        fruitList.add("Banana");    
+        fruitList.add("Apple");    
+        fruitList.add("Strawberry");    
+        String[] array = fruitList.toArray(new String[fruitList.size()]);    
+        System.out.println("Printing Array: "+Arrays.toString(array));  
+        System.out.println("Printing List: "+fruitList);  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Printing Array: [Mango, Banana, Apple, Strawberry]
+Printing List: [Mango, Banana, Apple, Strawberry]
+#+end_example
+
+** Get and Set Element in List
+The *get()* method /return the element at the given index/, whereas the *set()* method /changes or replaces the element./
+
+#+begin_src java
+import java.util.*;
+public class ListExample2{  
+    public static void main(String args[]){  
+        List<String> list=new ArrayList<String>();  
+        list.add("Apple");  
+        list.add("Banana");  
+        list.add("Grapes");  
+        System.out.println("Returning element: "+list.get(1));
+        list.set(1,"Dates");  
+        for(String fruit:list)  
+        System.out.println(fruit);  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Apple
+Mango
+Dates
+Banana
+Grapes
+#+end_example
+
+** Sort List
++ The =java.util= package a utility class *Collections* which has the static method sort().
++ Using the =Collections.sort()= method, we can easily sort any List.
+
+#+begin_src java
+import java.util.*;  
+class SortArrayList{  
+    public static void main(String args[]){  
+        List<String> list1=new ArrayList<String>();  
+        list1.add("Mango");  
+        list1.add("Apple");  
+        list1.add("Banana");  
+        list1.add("Grapes");  
+        Collections.sort(list1);  
+        for(String fruit:list1)  
+            System.out.println(fruit);  
+        System.out.println("Sorting numbers...");  
+        List<Integer> list2=new ArrayList<Integer>();  
+        list2.add(21);  
+        list2.add(11);  
+        list2.add(51);  
+        list2.add(1);  
+        Collections.sort(list2);  
+        for(Integer number:list2)  
+            System.out.println(number);  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Apple
+Banana
+Grapes
+Mango
+Sorting numbers...
+1
+11
+21
+51
+#+end_example
+
+** Java ListIterator Interface
+ListIterator Interface is used to traverse the element in a backward and forward direction.
+
+*** ListIterator Interface declaration
+#+begin_example syntax
+public interface ListIterator<E> extends Iterator<E>
+#+end_example
+
+*** Methods of Java ListIterator Interface:
+
+| Method                | Descripton                                                                            |
+|-----------------------+---------------------------------------------------------------------------------------|
+| void add(E e)         | This method inserts the specified element into the list.                              |
+| boolean hasNext()     | This method returns true if the list iterator has more elements while traversing the  |
+|                       | list in the forward direction.                                                        |
+| E next()              | This method returns the next element in the list and advances the cursor position.    |
+| int nextIndex()       | This method returns the index of the element that would be returned by a subsequent   |
+|                       | call to next().                                                                       |
+| boolean hasPrevious() | This method returns true if this list iterator has more elements while traversing the |
+|                       | list in the reverse direction.                                                        |
+| E previous()          | This method returns the previous element in the list and moves the cursor position    |
+|                       | backward.                                                                             |
+| E previousIndex()     | This method returns the index of the element that would be returned by a subsequent   |
+|                       | call to previous().                                                                   |
+| void remove()         | This method removes the last element from the list that was returned by next() or     |
+|                       | previous() methods.                                                                   |
+| void set(E e)         | This method replaces the last element returned by next() or previous() methods with   |
+|                       | the specified element.                                                                |
+
+*** Example of ListIterator Interface
+#+begin_src java
+import java.util.*;  
+public class ListIteratorExample1{  
+    public static void main(String args[]){  
+        List<String> al=new ArrayList<String>();    
+        al.add("Amit");    
+        al.add("Vijay");    
+        al.add("Kumar");    
+        al.add(1,"Sachin");    
+        ListIterator<String> itr=al.listIterator();    
+        System.out.println("Traversing elements in forward direction");    
+        while(itr.hasNext()){    
+            System.out.println("index:"+itr.nextIndex()+" value:"+itr.next());    
+        }    
+        System.out.println("Traversing elements in backward direction");    
+        while(itr.hasPrevious()){    
+            System.out.println("index:"+itr.previousIndex()+" value:"+itr.previous());    
+        }    
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Traversing elements in forward direction
+index:0 value:Amit
+index:1 value:Sachin
+index:2 value:Vijay
+index:3 value:Kumar
+Traversing elements in backward direction
+index:3 value:Kumar
+index:2 value:Vijay
+index:1 value:Sachin
+index:0 value:Amit
+#+end_example
+
+** Example of List: Book
+List where we are adding the Books.
+#+begin_src java
+import java.util.*;  
+class Book {  
+int id;  
+String name,author,publisher;  
+int quantity;  
+public Book(int id, String name, String author, String publisher, int quantity) {  
+    this.id = id;  
+    this.name = name;  
+    this.author = author;  
+    this.publisher = publisher;  
+    this.quantity = quantity;  
+}  
+}  
+public class ListExample5 {  
+public static void main(String[] args) {  
+    List<Book> list=new ArrayList<Book>();  
+    Book b1=new Book(101,"Let us C","Yashwant Kanetkar","BPB",8);  
+    Book b2=new Book(102,"Data Communications and Networking","Forouzan","Mc Graw Hill",4);  
+    Book b3=new Book(103,"Operating System","Galvin","Wiley",6);  
+    list.add(b1);  
+    list.add(b2);  
+    list.add(b3);  
+    for(Book b:list){  
+    System.out.println(b.id+" "+b.name+" "+b.author+" "+b.publisher+" "+b.quantity);  
+    }  
+}  
+}  
+#+end_src
+
+#+begin_example output
+101 Let us C Yashwant Kanetkar BPB 8
+102 Data Communications and Networking Forouzan Mc Graw Hill 4
+103 Operating System Galvin Wiley 6
+#+end_example
+
+* Java HashSet
++ Java HashSet class used to create a collection that uses a hash table for storage. 
++ It inherits the AbstractSet class and implements Set interface.
+
++ The important points about java HashSet class are:
+    - HashSet stores the elements by using a mechanism called *hashing*.
+    - HashSet contains unique elements only.
+    - HashSet allows null value.
+    - HashSet class is non synchronized.
+    - HashSet doesn't maintain the insertion order. Here, elements are inserted on the basis of their hashcode.
+    - HashSet is the best approach for search operations.
+
+** Difference between List and Set
+A list can contain duplicate elements whereas Set contains unique elements only.
+
+** Hierarchy of HashSet class
+The HashSet class extends AbstractSet class which implements Set interface. The Set interface inherits Collection and Iterable interfaces in hierarchical order.
+
+** HashSet class declaration
+declaration for =java.util.HashSet= class.
+
+#+begin_example
+public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Serializable
+#+end_example
+
+** Constructors of Java HashSet class
+
+| Constructor                             | Description                                                                      |
+|-----------------------------------------+----------------------------------------------------------------------------------|
+| HashSet()                               | It is used to construct a default HashSet.                                       |
+| HashSet(int capacity)                   | It is used to initalize the capacity of the hash set to the given integer        |
+|                                         | value capacity. The capacity grows automatically as elements are added to        |
+|                                         | the HashSet.                                                                     |
+| HashSet(int capacity, float loadFactor) | It is used to initalized the capacity of the hash set to the given integer       |
+|                                         | value capacity and the specified load factor.                                    |
+| HashSet(Collection<? extends E> c)      | It is used to initialize the hash set by using the elements of the collection c. |
+
+** Methods of java HashSet class
+
+| Modifier & type | Method             | Description                                                                      |
+|-----------------+--------------------+----------------------------------------------------------------------------------|
+| boolean         | add(E e)           | It is used to add the specified element to this set if it is not already present |
+| void            | clear()            | It is used to remove all of the elements from the set.                           |
+| object          | clone()            | It is used to return a shallow copy of this HashSet instance: the elements       |
+|                 |                    | themselves are not cloned.                                                       |
+| boolean         | contains(Object o) | It is used to return true if this set contains the specified element.            |
+| boolean         | isEmpty()          | It is used to return true if this set contains no elements.                      |
+| Iterator<E>     | iterator()         | It is used to return an iterator over the elements in this set.                  |
+| boolean         | remove(Object o)   | It is used to remove the specified element from this set if it is present.       |
+| int             | size()             | It is used to return the number of element in the set.                           |
+| Spliterator<E>  | spliterator()      | It is used to create a late-binding and fail-fast Spliterator over the elements  |
+|                 |                    | in the set.                                                                      |
+
+** Java HashSet Example
+
+#+begin_src java
+import java.util.*;  
+class HashSet1{  
+public static void main(String args[]){  
+        HashSet<String> set=new HashSet();  
+        set.add("One");    
+        set.add("Two");    
+        set.add("Three");   
+        set.add("Four");  
+        set.add("Five");  
+        Iterator<String> i=set.iterator();  
+        while(i.hasNext())  
+        {  
+            System.out.println(i.next());  
+        }  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Five
+One
+Four
+Two
+Three
+#+end_example
+
+** Java HashSet example ignoring duplication elements
+
+#+begin_src java
+import java.util.*;  
+class HashSet2{  
+    public static void main(String args[]){  
+        HashSet<String> set=new HashSet<String>();  
+        set.add("Ravi");  
+        set.add("Vijay");  
+        set.add("Ravi");  
+        set.add("Ajay");  
+        Iterator<String> itr=set.iterator();  
+        while(itr.hasNext()){  
+            System.out.println(itr.next());  
+        }  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+Ajay
+Vijay
+Ravi
+#+end_example
+
+** Java HashSet Example: Book
+#+begin_src java
+import java.util.*;  
+class Book {  
+int id;  
+String name,author,publisher;  
+int quantity;  
+public Book(int id, String name, String author, String publisher, int quantity) {  
+    this.id = id;  
+    this.name = name;  
+    this.author = author;  
+    this.publisher = publisher;  
+    this.quantity = quantity;  
+    }  
+}  
+public class HashSetExample {  
+    public static void main(String[] args) {  
+        HashSet<Book> set=new HashSet<Book>();  
+        Book b1=new Book(101,"Let us C","Yashwant Kanetkar","BPB",8);  
+        Book b2=new Book(102,"Data Communications & Networking","Forouzan","Mc Graw Hill",4);  
+        Book b3=new Book(103,"Operating System","Galvin","Wiley",6);  
+        set.add(b1);  
+        set.add(b2);  
+        set.add(b3);  
+        for(Book b:set){  
+            System.out.println(b.id+" "+b.name+" "+b.author+" "+b.publisher+" "+b.quantity);  
+        }  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+101 Let us C Yashwant Kanetkar BPB 8
+102 Data Communications & Networking Forouzan Mc Graw Hill 4
+103 Operating System Galvin Wiley 6
+#+end_example
+
+* Java LinkedHashSet Class
+
+Java LinkedHashSet class is a Hashtable and Linked list implementation of the Set interface. It inherits the HashSet class and implements the Set interface.
+
+The important points.
++ Java LinkedHashSet class contains unique elements only like HashSet.
++ Java LinkedHashSet class provides all optional set operations and permits null elements.
++ Java LinkedHashSet class is non-synchronized.
++ Java LinkedHashSet class maintains insertion order.
+
+[[./img/linkedhashset.png]]
+
+** Hierarchy of LinkedHashSet class
+The LinkedHashSet class extends the HashSet class, which implements the Set interface. The Set interface inherits Collection and Iterable interface in hierarchical order.
+
+** LinkedHashSet Class Declaration
+#+begin_example syntax
+public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, Serializable
+#+end_example
+
+** Constructors of Java LinkedHashSet Class
+
+| Constructor                 | Description                                                                       |
+|-----------------------------+-----------------------------------------------------------------------------------|
+| HashSet()                   | It is used to construct a default HashSet.                                        |
+| HashSet(Collection c)       | It is used to initialize the hash set by using the elements of the collection c.  |
+| LinkedHashSet(int capacity) | It is used to initialize the capacity of the linked hash set to the given integer |
+|                             | value capacity.                                                                   |
+| LinkedHashSet(int capacity, | It is used to initialize both the capacity and the fill ratio (also called load   |
+| float fillRation)           | capacity) of the hash set from its argument.                                   |
+
+** Java LinkedHashSet Example
+
+#+begin_src java
+import java.util.*;  
+class LinkedHashSet1{  
+    public static void main(String args[]){  
+        LinkedHashSet<String> set=new LinkedHashSet();  
+        set.add("One");    
+        set.add("Two");    
+        set.add("Three");   
+        set.add("Four");  
+        set.add("Five");  
+        Iterator<String> i=set.iterator();  
+        while(i.hasNext())  
+        {  
+            System.out.println(i.next());  
+        }  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+One
+Two
+Three
+Four
+Five
+#+end_example
+
+** Java LinkedHashSet example ignoring duplication Elements
+
+#+begin_src java
+import java.util.*;  
+class LinkedHashSet2{  
+    public static void main(String args[]){  
+        LinkedHashSet<String> al=new LinkedHashSet<String>();  
+        al.add("Ravi");  
+        al.add("Vijay");  
+        al.add("Ravi");  
+        al.add("Ajay");  
+        Iterator<String> itr=al.iterator();  
+        while(itr.hasNext()){  
+            System.out.println(itr.next());  
+        }  
+    }  
+} 
+#+end_src
+
+#+begin_example output
+Ravi
+Vijay
+Ajay
+#+end_example
+
+** Remove Elements Using LinkedHashSet Class
+
+#+begin_src java
+import java.util.*;  
+  
+public class LinkedHashSet3   
+{  
+    public static void main(String argvs[])  
+    {  
+        LinkedHashSet<String> lhs = new LinkedHashSet<String>();  
+        lhs.add("Java");  
+        lhs.add("T");  
+        lhs.add("Point");  
+        lhs.add("Good");  
+        lhs.add("Website");  
+        System.out.println("The hash set is: " + lhs);  
+        System.out.println(lhs.remove("Good"));  
+        System.out.println("After removing the element, the hash set is: " + lhs);  
+        System.out.println(lhs.remove("For"));  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+The hash set is: [Java, T, Point, Good, Website]
+true
+After removing the element, the hash set is: [Java, T, Point, Website]
+false
+#+end_example
+
+** Java LinkedHashSet Example: Book
+
+#+begin_src java
+import java.util.*;  
+class Book {  
+    int id;  
+    String name,author,publisher;  
+    int quantity;  
+    public Book(int id, String name, String author, String publisher, int quantity) {  
+        this.id = id;  
+        this.name = name;  
+        this.author = author;  
+        this.publisher = publisher;  
+        this.quantity = quantity;  
+    }  
+}  
+public class LinkedHashSetExample {  
+    public static void main(String[] args) {  
+        LinkedHashSet<Book> hs=new LinkedHashSet<Book>();  
+        Book b1=new Book(101,"Let us C","Yashwant Kanetkar","BPB",8);  
+        Book b2=new Book(102,"Data Communications & Networking","Forouzan","Mc Graw Hill",4);  
+        Book b3=new Book(103,"Operating System","Galvin","Wiley",6);  
+        hs.add(b1);  
+        hs.add(b2);  
+        hs.add(b3);  
+        for(Book b:hs){  
+        System.out.println(b.id+" "+b.name+" "+b.author+" "+b.publisher+" "+b.quantity);  
+        }  
+    }  
+}  
+#+end_src
+
+#+begin_example output
+101 Let us C Yashwant Kanetkar BPB 8
+102 Data Communications & Networking Forouzan Mc Graw Hill 4
+103 Operating System Galvin Wiley 6
+#+end_example
+
+* Java TreeSet class
++ Java TreeSet class implements the Set interface that uses a tree for storage. 
++ It inherits AbstractSet class & implements the NavigableSet interface.
++ The Object of the TreeSet class are stored in ascending order.
+
++ The important points
+    - Java TreeSet class contians unique elements only like HashSet
+    - Java TreeSet class access and retrieval times are quiet fast.
+    - Java TreeSet class doesn't allow null element.
+    - Java TreeSet class is non synchronized.
+    - Java TreeSet class maintains ascending order.
+    - Java TreeSet can only allow those generic types that are comparable. For exmaple The comparable interface is being implemented by the StringBuffer class.
+
+** Internal Working of the TreeSet Class
+
++ TreeSet is being implemented using a binary search tree, which is self-balancing just lie a Red-Black tree. Therefore, operations such as a search, remove, and add consume O(log(N)) time.
++ The reason behind this is there in the self-balancing tree. It is there to ensure that the tree height never exceeds O(log(N)) for all of the mentioned operations.
++ Therefore, it is one of the efficient data structures in order to keep the large data that is sorted and also to do operations on it.
+
+** Synchronization of The TreeSet Class
+
+#+begin_example 
+TreeSet treeSet = new TreeSet();
+
+Set syncrSet = Collections.synchronziedSet(treeSet);
+#+end_example
+
+** Hierarchy of TreeSet class
+The java TreeSet class implements the NavigableSet interface. The NavigableSet interface extends SortedSet, Set, Collection and Iterable interfaces in hierarchical Order.
+
+** TreeSet Class Declaration
+#+begin_example
+public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Cloneable, Serializable
+#+end_example
+
+** Constructors of Java TreeSet Class
+
+| Constructor                        | Description                                                                        |
+|------------------------------------+------------------------------------------------------------------------------------|
+| TreeSet()                          | It is used to construct an empty tree set that will be sorted in ascending order   |
+|                                    | according to the natural order of the tree set.                                    |
+| TreeSet(Collection<? extends E> c) | It is used to build a new tree set that contains the elements of the collection c. |
+| TreeSet(Comparator<? super E>      | It is used to construct an empty tree set that will be sorted according to given   |
+| comparator)                        | comparator.                                                                        |
+| TreeSet(SortedSet<E> s)            | It is used to builda TreeSet that contains the elements of the given SortedSet.    |
+
+** Methods of Java TreeSet Class
+
+| no | Method                                           | Description                                                                           |
+|----+--------------------------------------------------+---------------------------------------------------------------------------------------|
+|  1 | boolean add(E e)                                 | It is used to add the specified element to this set if it is not already present.     |
+|  2 | boolean addAll(Collection<? extends E> c)        | It is used to add all of the elements in the spcified collection to this set          |
+|  3 | E ceiling(E e)                                   | It returns the equal or closest greatest element of the specified element from the    |
+|    |                                                  | set, or null there is no such element.                                                |
+|  4 | Comparator<? super E> comparator()               | It returns a comparator that arranges elements in order.                              |
+|  5 | Iterator descendingIterator()                    | It is used to iterate the elements in descending order.                               |
+|  6 | NavigableSet descendingSet()                     | It returns the elements in reverse order.                                             |
+|  7 | E floor(E e)                                     | It returns the equal or closest least element of the spcified element from the set    |
+|    |                                                  | , or null there is no such element.                                                   |
+|  8 | SortedSet headSet(E toElement)                   | It returns the group of elements that are less than the specified element.            |
+|  9 | NavigableSet headSet(E toElement,                | It returns the group of elements that are less than or equal to( if, inclusive is     |
+|    | boolean inclusive)                               | true ) the specified element.                                                         |
+| 10 | E higher(E e)                                    | It returns the closest greatest element of the specified element from the set, or     |
+|    |                                                  | null there is no such element.                                                        |
+| 11 | Iterator iterator()                              | It is used to iterate the elements in ascending order.                                |
+| 12 | E lower(E e)                                     | It returns the closest least element of the specified element from the set, or null   |
+|    |                                                  | there is no such element.                                                             |
+| 13 | E pollFirst()                                    | It is used to retrieve and remove the lowest(first) element.                          |
+| 14 | E pollLast()                                     | It is used to retrieve and remove the highest(last) element.                          |
+| 15 | Spliterator spliterator()                        | It is used to create a late-binding and fail-fast spliterator over the elements.      |
+| 16 | NavigableSet subSet(E fromElmenet, boolean       | It return a set of elements that lie between the given range.                         |
+|    | fromInclusive, E toElement, boolean toInclusive) |                                                                                       |
+| 17 | SortedSet subSet(E fromElement, E toElement)     | It returns a set of elements that lie between the given range which includes          |
+|    |                                                  | fromElement and excludes toElement.                                                   |
+| 18 | SortedSet tailSet(E fromElement)                 | It returns a set of elements that are greater than or equal to the specified element. |
+| 19 | NavigableSet tailSet(E fromElement, boolean      | It returns a set of elements that are greater than or equal to(if, inclusive is true) |
+|    | inclusive)                                       | the specified element.                                                                |
+| 20 | boolean contains(Object o)                       | It returns true if this set contains the specified element.                           |
+| 21 | boolean isEmpty()                                | It returns true if this set contains no elements.                                     |
+| 22 | boolean remove(Object o)                         | It is used to remove the specified element from this set if it is present             |
+| 23 | void clear()                                     | It is used to remove all of the elements from this set.                               |
+| 24 | Object clone()                                   | It returns a shallow copy of this TreeSet instance.                                   |
+| 25 | E first()                                        | It returns the first(lowest) element currently in this sorted set.                    |
+| 26 | E last()                                         | It returns teh last(highest) element currently in this sorted set.                    |
+| 27 | int size()                                       | It returns the number of elements in this set.                                        |
+
+
+
+
+
+
+
+
+
