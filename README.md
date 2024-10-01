@@ -14,5 +14,5 @@
 - [x] Parameterised and functional recursion.
 - [x] Problems on functional recursion.
 - [x] Multiple Recursion calls.
-- [ ] Hashing , Maps, Time complexity.
+- [x] Hashing , Maps, Time complexity.
 - [ ] Sorting Selection sort, bubble sort, insertion sort..

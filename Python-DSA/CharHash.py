@@ -1,3 +1,9 @@
+"""
+
+   Character Hashing
+
+"""
+
 from collections import defaultdict
 
 
