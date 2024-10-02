@@ -55,3 +55,13 @@
 5. Repeat until the entire array is sorted.
 
 ![Insertion Sort](./img/insertionsort.png)
+
+**Code**
+
+- [java](./../JAVA-DSA/InsertionSort.java)
+- [python](./../Python-DSA/InsertionSort.py)
+
+**Time Complexity**
+
+- Worst or Average time complexity is `O(N^2)`
+- Best time complexity is `O(N)`
