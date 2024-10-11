@@ -1,6 +1,6 @@
 # Sorting Algorithm
 
-## Selection Sort
+## 1. Selection Sort
 
 **Step of the selection sort algorithm**
 
@@ -21,7 +21,7 @@
 
 - best , worst, and average time complexity is `O(N^2)`
 
-## Bubble Sort
+## 2. Bubble Sort
 
 **Step of the Bubble sort algorithm**
 
@@ -44,7 +44,7 @@
 - Worst or Average time complexity is `O(N^2)`
 - Best time complexity is `O(N)`
 
-## Insertion Sort
+## 3. Insertion Sort
 
 **Step of the Insertion sort algorithm**
 
@@ -65,3 +65,20 @@
 
 - Worst or Average time complexity is `O(N^2)`
 - Best time complexity is `O(N)`
+
+## 4. Merge Sort
+
+**Divide**: The algorithm starts with breaking up the array into smaller and smaller pieces until one such sub-array only consists of one element.
+
+**Conquer**: The algorithm merges the small pieces of the array back together by putting the lowest values first, resulting in a sorted array.
+
+![Merge Sort](./img/mergesort.png)
+
+**Code**
+
+- [java](./../JAVA-DSA/MergeSort.java)
+- [python](./../Python-DSA/MergeSort.py)
+
+**Time Complexity**
+
+- In all the case best, worst, average merge sort has `O(N logN)` time complexity.
