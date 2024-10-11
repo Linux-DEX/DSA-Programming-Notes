@@ -16,8 +16,8 @@
 - [x] Multiple Recursion calls.
 - [x] Hashing , Maps, Time complexity.
 - [x] Sorting Selection sort, bubble sort, insertion sort..
-- [ ] Merge Sort, algorithm, Pseudocode, dry run
-- [ ] Quick Sort for beginners
+- [x] Merge Sort, algorithm, Pseudocode, dry run
+- [x] Quick Sort for beginners
 - [ ] Find Second Largest Element in array.
 - [ ] Rotate Array by K places, Union, intersection of sorted array.
 - [ ] Find element that appears once , find missing number, max consecutive number of 1's
