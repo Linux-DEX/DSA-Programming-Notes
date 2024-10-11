@@ -101,3 +101,5 @@
 
 **Time Complexity**
 
+- Best & Average case `O(N logN)`
+- Worst case `O(N^2)`
