@@ -96,8 +96,8 @@
 
 **Code**
 
-- [java]()
-- [python]()
+- [java](../JAVA-DSA/QuickSort.java)
+- [python](../Python-DSA/QuickSort.py)
 
 **Time Complexity**
 
