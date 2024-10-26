@@ -1,0 +1,28 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Shifting Arguments
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle shift-args.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#shifting-arguments][Shifting Arguments]]
+
+* Shifting Arguments
++ When we pass multiple arguments, we can shift.
+
+#+begin_src bash
+#!/bin/bash
+
+echo "Creating user"
+echo "Username is $1"
+
+shift
+echo "Description is $@"
+#+end_src
+
++ in this case when passing the argument like this
+#+begin_example
+shift-args.sh alex test user from QA team
+#+end_example
+
+in this case it will take 1st args as alex and from test it will take all the value as 2nd args

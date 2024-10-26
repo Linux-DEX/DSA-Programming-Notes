@@ -1,0 +1,53 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: String Operations
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle string.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#string-operations][String operations]]
+  - [[#defining-string][Defining string]]
+  - [[#length-of-string][Length of String]]
+  - [[#upper-case][Upper Case]]
+  - [[#lower-case][Lower Case]]
+  - [[#replace-string][Replace string]]
+  - [[#slicing-string][Slicing string]]
+
+* String operations
+** Defining string
+#+begin_src bash
+#!/bin/bash
+
+myVar="Hey Linux-DEX, How are you?"
+#+end_src
+
+** Length of String
+print number of character in the string
+#+begin_src bash
+myVarLength=${#myVar}
+echo "Length of the myVar is $myVarLength"
+#+end_src
+
+** Upper Case
+conver the string into uppercase.
+#+begin_src bash
+echo "Upper case is -------- ${myVar^^}"
+#+end_src
+
+
+** Lower Case
+convert the string into lowercase.
+#+begin_src bash
+echo "Lower case is ---------- ${myVar,,}"
+#+end_src
+
+** Replace string
+#+begin_src bash
+newVar=${myVar/Linux-DEX/Buddy}
+echo "New string is --- ${newVar}"
+#+end_src
+
+** Slicing string
+#+begin_src bash
+echo "after slice --- ${myVar:0:3}"
+#+end_src

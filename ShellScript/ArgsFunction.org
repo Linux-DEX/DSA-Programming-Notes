@@ -1,0 +1,39 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Functions Arguments
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle argsfunc.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#argument-in-function][Argument in function]]
+  - [[#syntax][syntax]]
+  - [[#defining-function][defining function]]
+  - [[#passing-arguement][passing arguement]]
+
+* Argument in function
+** syntax
+#+begin_example
+fun_name() {
+    statement
+}
+
+fun_name arg1 arg2
+#+end_example
+
+** defining function
+#+begin_src bash
+#!/bin/bash
+
+function welcomeNote {
+    echo "----------"
+    echo "Welcome $1"
+    echo "age $2"
+    echo "----------"
+}
+#+end_src
+
+
+** passing arguement
+#+begin_src bash
+welcomeNote Raju 22
+#+end_src

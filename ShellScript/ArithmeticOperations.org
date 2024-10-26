@@ -1,0 +1,53 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Arithmetic Operations in ShellScript
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle arithmeticOps.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#arithmetic-operations][Arithmetic Operations]]
+  - [[#defining-variable][Defining variable]]
+  - [[#how-to-use-expression][How to use expression]]
+  - [[#multiply][multiply]]
+  - [[#addition][Addition]]
+- [[#other-way-to-do-it][Other way to do it]]
+  - [[#substraction][Substraction]]
+
+* Arithmetic Operations
+** Defining variable
+#+begin_src bash
+#!/bin/bash
+
+x=10
+y=2
+#+end_src
+
+** How to use expression
+Using =let= command we can define expression.
+#+begin_example
+let a++
+let a=5*10
+
+((a++))
+((a=5*10))
+#+end_example
+
+** multiply
+#+begin_src bash
+let mul=$x*$y
+echo "$mul"
+#+end_src
+
+** Addition
+#+begin_src bash
+let sum=$x+$y
+echo "$sum"
+#+end_src
+
+* Other way to do it
+** Substraction
+#+begin_src bash
+echo "substraction is $(($x-$y))"
+#+end_src
+
+

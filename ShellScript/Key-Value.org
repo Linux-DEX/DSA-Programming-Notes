@@ -1,0 +1,25 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Arrays
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle key-value.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#arrays-key-value][Arrays key-value]]
+  - [[#declaring-and-defining-key-value-in-array][declaring and defining key-value in array]]
+  - [[#printing-value-according-to-key-value][printing value according to key value]]
+
+* Arrays key-value
+** declaring and defining key-value in array
+#+begin_src bash
+#!/bin/bash
+
+declare -A myArray
+myArray=( [name]=Linux-DEX [age]=22 [city]=bangalore )
+#+end_src
+
+** printing value according to key value
+#+begin_src bash
+echo "Name is ${myArray[name]}"
+echo "Age is ${myArray[age]}"
+#+end_src

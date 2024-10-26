@@ -1,0 +1,66 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: BASH Variables
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle bash-var.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#random][RANDOM]]
+- [[#uid][UID]]
+- [[#what-is-devnull][What is /dev/null]]
+- [[#print-name-of-the-script][Print name of the script]]
+- [[#log-message][Log Message]]
+
+* RANDOM
+A random integer between 0 and 32767 is generated
+#+begin_example
+echo $RANDOM
+#+end_example
+
++ /output will be random everytiem you run the command/
+
+* UID
+User ID of the user logged in
+#+begin_example
+echo $UID
+#+end_example
+
++ /every user it will be different number/
++ *for sudo user $UID will be 0*
+  
+#+begin_src bash
+#!/bin/bash
+
+if [[ $UID -eq 0 ]]
+then 
+    echo "user is root"
+else
+    echo "user is not root"
+fi
+#+end_src
+
+* What is /dev/null
+
+In case if you don't wanna print the output of a command on terminal or write in a file.
+
+we can redirect to output to 
+=/dev/nul=
+
+example
+#+begin_example
+cd /root &> /dev/null
+#+end_example
+
+* Print name of the script
+#+begin_src bash
+echo "The name of the script is: ${0}"
+#+end_src
+
+* Log Message
++ If you want to maintain the logging for your script, you can use =logoer= in your script.
++ You can find the log under
+=/var/logs/messages=
++ example: 
+#+begin_example
+logger "hey buddy"
+#+end_example

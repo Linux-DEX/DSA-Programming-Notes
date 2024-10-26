@@ -1,0 +1,31 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Infinite Loop
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle infinite-loop.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#infinite-loop][Infinite Loop]]
+  - [[#syntax][Syntax]]
+  - [[#example][Example]]
+
+* Infinite Loop
+** Syntax
+#+begin_example
+while true
+do
+    #statement
+    #command
+done
+#+end_example
+
+** Example
+#+begin_src bash
+#!/bin/bash
+
+while true
+do
+    echo "Hi buddy"
+    sleep 2s
+done
+#+end_src

@@ -1,0 +1,37 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Read content from a CSV file
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle csv-file.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#csv-file][CSV file]]
+- [[#if-you-dont-want-first-row][if you don't want first row]]
+
+* CSV file
+#+begin_src bash
+#!/bin/bash
+
+while IFS="," read id name age
+do
+echo "Id is $id"
+echo "Name is $name"
+echo "age is $age"
+done < sampleTwo.csv
+#+end_src
+
+
+* if you don't want first row
+
+#+begin_src bash
+
+cat sampleTwo.csv | awk 'NR!=1 {print}' | while IFS="," read id name age
+do
+    echo "id is $id"
+done
+#+end_src
+
+NOTE: You can directly use this like on csv file to check command is working or not.
+#+begin_example
+cat csv-file.csv | awk 'NR!=1' {print}'
+#+end_example

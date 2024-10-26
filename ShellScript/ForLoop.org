@@ -1,0 +1,53 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: For Loop 
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle for-loop.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#for-loop][For Loop]]
+  - [[#syntax][Syntax]]
+  - [[#example][Example]]
+
+* For Loop
+** Syntax
+#+begin_example
+for variable in list
+do
+commands
+done
+#+end_example
+
+Or
+
+#+begin_example
+for (( expression1; expression2; expression3 ))  
+do  
+commands  
+done  
+#+end_example
+
+** Example
+#+begin_src bash
+#!/bin/bash
+
+for i in 1 2 3 4 5 6 7 8 9 10
+do 
+    echo "number is $i"
+done
+#+end_src
+
+#+begin_src bash
+for name in Raju Sham Baburao
+do
+    echo "name is $name"
+done
+#+end_src
+
++ we can give the range of number if this form
+#+begin_src bash
+for i in {1..5}
+do
+    echo "number is $i"
+done
+#+end_src

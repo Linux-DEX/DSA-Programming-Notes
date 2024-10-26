@@ -1,0 +1,53 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Functions
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle functions.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#functions][Functions]]
+  - [[#syntax][Syntax]]
+  - [[#defining-function][defining function]]
+  - [[#calling-function][Calling function]]
+
+* Functions
++ Block of code which perform some task and run when it is called.
++ Can be reuse many times in our program which  lessen our lines of code.
++ we can pass arguments to the method.
+
+** Syntax
+#+begin_example bash
+function myfun {
+    statement
+}
+
+myfun() {
+    statement
+}
+
+# to call the function
+myfun
+#+end_example
+
+** defining function
+#+begin_src bash
+#!/bin/bash
+
+function welcomeNote {
+    echo "----------"
+    echo "Welcome"
+    echo "----------"
+}
+
+welcomeAgain() {
+    echo "----------"
+    echo "Welcome Again"
+    echo "----------"
+}
+#+end_src
+
+** Calling function
+#+begin_src bash
+welcomeNote
+welcomeAgain
+#+end_src

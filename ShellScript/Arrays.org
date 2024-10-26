@@ -1,0 +1,63 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Arrays
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle arrays.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#array][Array]]
+  - [[#how-to-define-an-array][how to define an array?]]
+  - [[#how-to-get-values-form-an-array][How to get values form an array]]
+  - [[#length-of-array][Length of Array]]
+  - [[#get-specific-values][Get specific values]]
+- [[#update-an-array][Update an array]]
+
+* Array
+a collection of items, or data, stored in contiguous memory locations, also known as database systems.
+
+** how to define an array?
++ use space separated value.
+
+#+begin_src bash
+#!/bin/bash
+myArray=(1 2 203.3333 hello "shell script")
+#+end_src
+
+** How to get values form an array
++ to get the individual value.
+#+begin_src bash
+echo "Value of 3rd index ${myArray[3]}"
+#+end_src
+
++ to get all the value of array.
+#+begin_src bash
+echo "All the values in array are ${myArray[*]}"
+#+end_src
+
+** Length of Array
+#+begin_src bash
+echo "length of array is ${#myArray[*]}"
+#+end_src
+
+** Get specific values
+*** Syntax
+#+begin_example
+echo "${myArray[*]:<start-index>:<values>}"
+#+end_example
+
++ this will print all the value form index 1.
+#+begin_src bash
+echo "${myArray[*]:1}"
+#+end_src
+
++ this will print the value from index 2 and second 2 represent how many value to print from index 2.
+#+begin_src bash
+echo "value  from index 2-3 ${myArray[*]:2:2}"
+#+end_src
+
+* Update an array
+
+#+begin_src bash
+myArray+=( new 45 99)
+echo "Value of new array is ${myArray[*]}"
+#+end_src

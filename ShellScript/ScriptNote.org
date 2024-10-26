@@ -1,0 +1,38 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Shell Script Note
+#+AUTHOR: Linux-DEX
+#+OPTIONS: toc:2
+
+* TABLE OF CONTENT :toc:
+- [[#what-is-linux-shell][What is Linux Shell]]
+- [[#there-are-different-types-of-shell][There are different types of shell]]
+- [[#what-is-my-shell-type][What is my Shell type?]]
+  - [[#to-check-the-shell-available][To check the shell available]]
+- [[#what-is-shell-scripting][What is shell scripting?]]
+
+* What is Linux Shell
+A shell provide an environment to a user to execute commands and interact with kernel.
+
+* There are different types of shell
++ Bash
++ sh
++ ksh
++ tsh
++ fish
++ zsh
+  
+* What is my Shell type?
+You can check using
+#+begin_example
+echo $0
+#+end_example
+
+** To check the shell available
+#+begin_example
+cat /etc/shells
+#+end_example
+
+* What is shell scripting?
++ Shell script consist of set of commands to perform a task.
++ All the commands execute sequentially.
++ Some task like file manipulation program execution, user interaction, automation to task etc can be done.

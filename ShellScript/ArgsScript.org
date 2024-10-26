@@ -1,0 +1,42 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Arguments in scripts
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle args-script.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#argument-in-script][Argument in script]]
+  - [[#how-to-pass-argument-in-script][how to pass argument in script]]
+  - [[#number-of-argument][number of argument]]
+  - [[#printing-all-argument][printing all argument]]
+  - [[#number-of-argument-1][Number of argument]]
+
+* Argument in script
+** how to pass argument in script
+#+begin_example
+./args-scripts.sh arg1 arg2..
+#+end_example
+
++ To get no. of arguments : $#
++ To display all arguments : $@
++ To use or display a argument: $1 $2 ..
+  
+** number of argument
+#+begin_src bash
+#!/bin/bash
+
+echo "First argument is $1"
+echo "Second argument is $2"
+#+end_src
+
+** printing all argument
+#+begin_src bash
+
+echo "All the argument are - $@"
+#+end_src
+
+** Number of argument 
+#+begin_src bash
+
+echo "number of arguments are - $#"
+#+end_src

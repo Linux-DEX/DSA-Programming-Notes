@@ -1,0 +1,19 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Arguments in scripts and use in for
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle args-sh-for.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#argument-in-for-loop][Argument in for loop]]
+
+* Argument in for loop
+
+#+begin_src bash
+#!/bin/bash
+
+for filename in $@
+do
+    echo "Copying file - $filename"
+done
+#+end_src

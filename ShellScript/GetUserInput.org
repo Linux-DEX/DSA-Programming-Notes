@@ -1,0 +1,33 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Get user Input or user interaction
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle user-value.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#taking-input-from-user][Taking input from user]]
+  - [[#syntax][Syntax]]
+  - [[#user-input][User input]]
+  - [[#describing-in-read-command][describing in read command]]
+
+* Taking input from user
+** Syntax
+#+begin_example
+read <var_name>
+read -p "your name" Name
+#+end_example
+
+** User input
+#+begin_src bash
+#!/bin/bash
+
+echo "what is your name?" 
+read name
+echo "your name is $name"
+#+end_src
+
+** describing in read command 
+#+begin_src bash
+read -p "what is your age?" age
+echo "your age is $age"
+#+end_src

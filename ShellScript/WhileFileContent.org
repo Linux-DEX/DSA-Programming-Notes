@@ -1,0 +1,31 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Read content from a file
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle while-file-content.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#read-content-from-a-file][read content from a file]]
+  - [[#syntax][Syntax]]
+  - [[#read-file-content-example][read file content example]]
+
+* read content from a file
+** Syntax
+#+begin_example
+while read variable
+do
+    statement
+done < file_name
+#+end_example
+
+
+** read file content example
+#+begin_src bash
+#!/bin/bash
+
+while read myvar
+do
+echo "Value from file is $myvar"
+done < sample.txt
+
+#+end_src

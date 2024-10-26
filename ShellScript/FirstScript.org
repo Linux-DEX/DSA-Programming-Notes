@@ -1,0 +1,53 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: first program
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle first.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#first-program][First program]]
+- [[#what-is-shebang][What is Shebang?]]
+- [[#sending-output-to-terminal][Sending output to terminal]]
+- [[#how-to-run-a-script][How to run a script]]
+  - [[#giving-execute-permission-to-file][giving execute permission to file]]
+  - [[#run-using][Run using]]
+
+* First program
+#+begin_example
+#!/bin/bash
+echo "hey Linux-DEX"
+#+end_example
+
+* What is Shebang?
++ The shebang is a special character sequence in a script file that specifies which program should be called to run the script.
++ The shebang is always on the first line of the file, and is composed of the characters =#!= followed by the path to the interpreter program.
+#+begin_src bash
+#!/bin/bash
+#+end_src
+
+* Sending output to terminal
+display the line of text.
+#+begin_src bash
+echo "hey Linux-DEX"
+#+end_src
+
+* How to run a script
+** giving execute permission to file
+#+begin_example
+chmod +x first_script.sh
+#+end_example
+
+** Run using
+#+begin_example
+./first_script.sh
+
+/path/first_script.sh
+
+bash script.sh
+#+end_example
+
++ Ctrl + c to terminate
++ Ctrl + z to stop
+
+  
+

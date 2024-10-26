@@ -1,0 +1,50 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Case(similar to switch)
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle case.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#case][Case]]
+  - [[#syntax][Syntax]]
+  - [[#example][Example]]
+
+* Case
+** Syntax
+#+begin_example
+case $variable in
+pattern-1)
+  commands;;
+pattern-2)
+  commands;;
+pattern-3)
+  commands;;
+pattern-N)
+  commands;;
+*)
+  commands;;
+esac
+#+end_example
+
+** Example
+#+begin_src bash
+#!/bin/bash
+
+echo "Provide an option"
+echo "a for print data"
+echo "b for list of scripts"
+echo "c to check the current location"
+
+read choice
+
+case $choice in
+    a)
+        echo "Today date is"
+        date
+        echo "ending.."
+        ;;
+    b)ls;;
+    c)pwd;;
+    ,*)echo "Please provide a valid value"
+esac
+#+end_src

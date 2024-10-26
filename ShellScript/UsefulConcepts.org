@@ -1,0 +1,124 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: break and continue
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle break-continue.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#break][break]]
+- [[#continue][Continue]]
+- [[#sleep][sleep]]
+- [[#exit][exit]]
+- [[#exit-status-][exit status $?]]
+- [[#basename][basename]]
+  - [[#example][example]]
+- [[#dirname][dirname]]
+  - [[#example-1][example]]
+- [[#realpath][realpath]]
+  - [[#example-2][example]]
+
+* break
++ To stop the loop
+
++ we justt need to confirm if a given no. if present or not.
+#+begin_src bash
+#!/bin/bash
+
+no=6
+
+for i in 1 2 3 4 5 6 7 8 9
+do
+    if [[ $no -eq $i ]]
+    then 
+        echo "$no is found!!!!"
+        break
+    fi
+    echo "number is $i"
+done
+#+end_src
+
+* Continue
++ to stop current iteration of loop and start next iteration
+
++ Suppose we only need to print odd no.
+#+begin_src bash
+
+for i in 1 2 3 4 5 6 7 8 9 10
+do
+    let r=$i%2
+    if [[ $r -eq 0 ]]
+    then
+        continue
+    fi
+    echo "odd no. is $i"
+done
+
+#+end_src
+
+* sleep
++ to create delay between two executions ex: sleep 1s/1m
+
+* exit
++ to stop script at a point
+  
+#+begin_src bash
+if [[ $# -eq 0 ]]
+then
+    exit 1
+fi
+
+echo "first args is $1"
+echo "second args is $2"
+#+end_src
+
+* exit status $?
++ gives you status of previous command if that was successful
+
+NOTE: in some shell like fish use =$status=
+
+#+begin_src bash
+read -p "which site you want to check? " site
+ping -c 1 $site
+sleep 5s
+
+if [[ $? -eq 0 ]]
+then
+    echo "successfull connection to $site"
+else 
+    echo "unable to connect $site"
+fi
+#+end_src
+
+* basename
+strip directory info and only give filename
+
+** example
+#+begin_example
+basename /media/xander/Backup/Notes/ShellScript/sample.txt
+#+end_example
+
+it will give =output= only 
+#+begin_example
+sample.txt
+#+end_example
+
+* dirname
+strip the file name and gives directory path
+
+** example
+#+begin_example
+dirname /media/xander/Backup/Notes/ShellScript/sample.txt
+#+end_example
+
+#+begin_example
+/media/xander/Backup/Notes/ShellScript
+#+end_example
+
+* realpath
+gives you full path for a file.
+
+** example
+for example user is in some another directory to check the realpath of the file use this
+#+begin_example
+realpath sample.txt
+#+end_example

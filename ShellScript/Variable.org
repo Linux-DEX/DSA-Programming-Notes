@@ -1,0 +1,54 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Variables
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle variable.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#variable][Variable]]
+  - [[#printing-variable][printing variable]]
+- [[#change-variable][change variable]]
+- [[#variable-to-store-the-output-of-the-command][Variable to store the output of the command]]
+  - [[#other-way][other way]]
+
+* Variable
+#+begin_src bash
+#!/bin/bash
+
+a=10
+name="Linux-DEX"
+age=22
+#+end_src
+
+** printing variable
+#+begin_src bash
+echo "My name is $name and age is $age"
+#+end_src
+
+NOTE: don't use single quotes if you want to use variable 
+#+begin_example
+echo 'my name is $name'
+#+end_example
+
++ above code will give you error
+
+* change variable
+we can change the variable value any number of time in a program
+#+begin_src bash
+name="Alias"
+echo "My name is $name"
+#+end_src
+
+
+* Variable to store the output of the command
+
+#+begin_src bash
+HOSTNAME=$(hostname)
+echo "Hostname $HOSTNAME"
+#+end_src
+
+** other way
+#+begin_src bash
+pwd=`pwd`
+echo "path of $pwd"
+#+end_src

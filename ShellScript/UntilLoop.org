@@ -1,0 +1,32 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Until Loop
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle until-loop.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#until-loop][Until Loop]]
+  - [[#syntax][Syntax]]
+  - [[#example][Example]]
+
+* Until Loop
+** Syntax
+#+begin_example
+until [ condition ];
+do
+    block-of-statements
+done
+#+end_example
+
+** Example
+#+begin_src bash
+#!/bin/bash
+
+a=10
+
+until [ $a == 1 ]
+do
+    echo "Value of a is $a"
+    let a--
+done
+#+end_src

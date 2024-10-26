@@ -1,0 +1,41 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Debugging Scripts
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle debug-script.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#debugging-scripts][Debugging Scripts]]
+- [[#running-script-in-background][Running Script in background]]
+
+* Debugging Scripts
++ If we can enable the debugging of the script using below in the script.
+#+begin_example
+set -x
+#+end_example
+
+#+begin_src bash
+#!/bin/bash
+
+set -x
+
+if [[ $# -eq 0 ]]
+then
+    echo "please provide atleast one argument"
+    exit 1
+fi
+
+echo "first args -- $1"
+echo "second args -- $2"
+#+end_src
+
++ If we want to exit our script when a command fails
+#+begin_example
+set -e
+#+end_example
+
+* Running Script in background
+This command will run the script in background and store the output in nohup.out file
+#+begin_example
+nohup ./script.sh &
+#+end_example

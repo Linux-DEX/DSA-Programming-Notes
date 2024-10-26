@@ -1,0 +1,51 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Condition Statements(if-else)
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle if-else.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#if-else][If-Else]]
+  - [[#syntax][Syntax]]
+  - [[#example][example]]
+- [[#operators][Operators]]
+
+* If-Else
+** Syntax
+#+begin_example
+if [ condition ]
+then
+    statement
+else
+    statement
+fi
+#+end_example
+
+** example
+NOTE: Insted of using [[]] you can use [] also
+#+begin_src bash
+#!/bin/bash
+
+read -p "Enter your marks: " marks
+
+if [[ $marks -gt 40 ]] 
+then
+    echo "you are pass"
+else 
+    echo "you are FAIL....."
+fi
+#+end_src
+
+* Operators
+| equal                    | -eq / == |
+| Greater than or equal to | -ge      |
+| Less than or equal to    | -le      |
+| Not equal                | -ne / != |
+| Greater than             | -gt      |
+| Less than                | -lt      |
+
+
+
+
+
+

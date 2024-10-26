@@ -1,0 +1,20 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Iterate Values From File
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle iterate.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#iterate-file][Iterate file]]
+
+* Iterate file
+#+begin_src bash
+#!/bin/bash
+
+FILE="/media/xander/Backup/Notes/ShellScript/sample.txt"
+
+for name in $(cat $FILE)
+do
+    echo "Name is $name"
+done
+#+end_src

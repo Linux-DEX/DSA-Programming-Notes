@@ -1,0 +1,30 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Automate Script
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle automate-script.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#automate-script][Automate Script]]
+  - [[#using-at-command][using at command]]
+  - [[#using-crontab-command][using crontab command]]
+
+* Automate Script
+** using at command
++ For scheduling only one time, use AT
+#+begin_example
+at 12:09 PM
+    <your_command>
+Ctrl+D
+#+end_example
+
++ =atq= to check scheduled job.
++ =atrm <id>= to remove the schedule.
+
+** using crontab command
++ to check the existing jobs - =crontab -l=
++ to add new job - =crontab -e=
+
+#+begin_example
+ * * * * * <command> && ./script_name.sh 
+#+end_example

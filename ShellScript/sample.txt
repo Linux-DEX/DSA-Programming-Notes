@@ -1,0 +1,5 @@
+Arch-Linux
+Arco-Linux
+Garuda-Linux
+Artix-Linux
+Debian

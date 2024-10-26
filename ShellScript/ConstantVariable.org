@@ -1,0 +1,26 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Constant Variables
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle const-var.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#constant-variable][Constant variable]]
+
+* Constant variable
+Once you defined a variable and don't wanna change it until end of the script.
+#+begin_example
+readonly var_name="hi"
+#+end_example
+
+#+begin_src bash
+#!/bin/bash
+readonly college="not good"
+echo "My college is $college"
+#+end_src
+
+NOTE: this code will give you error that college can't not be change.
+#+begin_src bash
+college="good"
+#+end_src
+

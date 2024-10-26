@@ -1,0 +1,34 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: While Loop
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle while-loop.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#while-loop][While Loop]]
+  - [[#syntax][Syntax]]
+  - [[#example][example]]
+
+* While Loop
+** Syntax
+#+begin_example
+while [ condition ];
+do
+    # statements
+    # commands
+done 
+#+end_example
+
+** example
+#+begin_src bash
+#!/bin/bash
+
+count=0
+num=10
+
+while [[ $count -le $num ]]
+do
+    echo "Value of count var is $count"
+    let count++
+done
+#+end_src

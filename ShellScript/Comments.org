@@ -1,0 +1,38 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: comments
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle comments.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#comments][Comments]]
+  - [[#single-line-comment][Single line comment]]
+  - [[#multi-line-comment][Multi-line comment]]
+  - [[#other-way][other way]]
+
+* Comments
+** Single line comment
+#+begin_src bash
+#!/bin/bash
+#this is a comment
+#+end_src
+
+** Multi-line comment
+#+begin_src bash
+<<comment
+first
+second
+third
+comment
+
+echo "hello"
+#+end_src
+
+** other way
+#+begin_src bash
+: ' 
+first
+second
+third comments
+ '
+#+end_src

@@ -1,0 +1,67 @@
+#+TITLE: Shell Script 
+#+DESCRIPTION: Logical Operators
+#+AUTHOR: Linux-DEX
+#+PROPERTY: header-args :tangle logic.sh
+#+STARTUP: showeverything
+
+* TABLE OF CONTENT :toc:
+- [[#logical-operators][Logical Operators]]
+  - [[#logic-and][logic AND]]
+  - [[#logic-or][Logic OR]]
+  - [[#both-and--or][Both AND & OR]]
+
+* Logical Operators
+
+** logic AND
++ If both conditions are true then true else false.
+#+begin_example
+condition1 && condition2
+#+end_example
+
+*** example
+#+begin_src bash
+#!/bin/bash
+
+read -p "what is your age?" age
+read -p "your country:" country
+
+if [[ $age -ge 18 ]] && [[ $country == "India" ]]
+then
+    echo "you can vote"
+else 
+    echo "you can't vote"
+fi
+#+end_src
+
+** Logic OR
++ If any of the condition is true the true.
+#+begin_example
+condition1 || condition2
+#+end_example
+
+*** example
+#+begin_src bash
+#!/bin/bash
+
+read -p "what is your age?" age
+read -p "your country:" country
+
+if [[ $age -ge 18 ]] || [[ $country == "India" ]]
+then
+    echo "you can vote"
+else 
+    echo "you can't vote"
+fi
+#+end_src
+
+** Both AND & OR
++ Execute condition2 only when 1 is true else execute condition3
+#+begin_example
+condition1 && condition2 || condition3
+#+end_example
+
+*** example
+#+begin_src bash
+age=18
+[[ $age -ge 18 ]] && echo "adult" || echo "Minor"
+#+end_src
