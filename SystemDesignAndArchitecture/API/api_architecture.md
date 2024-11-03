@@ -179,3 +179,7 @@ Webhooks are well-suited for:
 - **Event-Driven Notifications**: Ideal for triggering actions in response to specific events, like notifying systems of a completed payment or new commit.
 - **Simple, Stable Data Models**: Works best when only basic data needs to be exchanged without complex structures.
 - **Decoupled Systems**: Useful when servers and clients don’t require direct interaction, as Webhooks allow each to operate independently.
+
+## All diagram
+
+![api structure](../img/apiStructure.png)
