@@ -72,7 +72,7 @@ A cloud provider **can have hundreds of cloud services** that are grouped variou
 	- The basic building blocks for cloud IT. Provides access to networking features, computers and data storage space.
 	- *Don't worry about IT staff, data center and hardware.*
 
-![type of Cloud computing](./img/typeOfCloudComputing.png)
+![type of Cloud computing](typeOfCloudComputing.png)
 
 ## Types of Cloud Computing Responsibilities
 
@@ -89,6 +89,157 @@ A cloud provider **can have hundreds of cloud services** that are grouped variou
 | Networking(Customer)     | Networking(CSP)             | Networking(CSP)       | Networking(CSP)       |
 
 ## Azure's Deployment Models
++ **Public cloud**
+	- *Everything* built on the cloud provider Also known as: Cloud-Native
++ **Private Cloud** 
+	+ Everything build on company's datacenters also known as on-premise.
+	+ The cloud could be *OpenStack*
++ **Hybrid**
+	+ Using both *On-Premise* and a *Cloud Service Provider*.
++ **Cross-Cloud** 
+	+ using *Multiple cloud providers* Aka multi-cloud, hybrid-cloud
+	 ![Azure arc model](azureArcmodel.png)
+
+## Total cost of ownership(TCO)
++ **On-Premise(CAPEX)**
+	+ Implementation
+	+ Configuration
+	+ Training
+	+ Physical Security
+	+ Hardware
+	+ IT Personal
+	+ Maintenance 
+	
++ **Azure(OPEX)**
+	+ Implementation
+	+ Configuration
+	+ Training
+
+## Capital vs Operational Expenditure
++ **Capitual Expenditure(CAPEX)**
+	+ ==Spending money upfront== on *physical infrastructure* deducting that expense from your tax bill over time.
+	+ server costs
+	+ storage costs
+	+ network costs
+	+ backup and archive costs etc..
+
++ **Operational Expenditure(OPEX)**
+	- The costs associated with an on-premises datacenter that has shifted the cost to the service provider. The customer only has to be concerned with non-physical costs.
+	- Leasing software and customizing features
+	- Training employees in cloud service.
+	- Paying for cloud support
+	- billing based on cloud matrics etc..
+
+## Cloud Architecture Terminologies
++ **What is Solutions Architect** 
+	+ A role in a technical organization that architects a technical solution using multiple systems via researching, documentation, experimentation.
+
++ **What is a cloud Architect** 
+	+ A solutions architect that is focused solely on architecting technical solution using cloud services
+	+ A cloud architect need to understand the following terms a factor them into their designed architecture based on the business requirements.
+	+ *Availability*
+	+ *Scalability*
+	+ *Elasticity*
+	+ *Fault Tolerance*
+	+ *Disaster recovery*
+
+## High Availability
+Your ability for your service to **remain available** by ensuring there is ==no single point of failure== and/or ensure a certain level of performance.
+![high available](available.png)
+
+Running you workload across multiple **Availability Zones** ensures that if 1 or 2 AZs become unavailable your service/applications remains available.
+
+> [!IMPORTANT]
+> **Azure load balancer**
+> A load balancer allows you to evenly distribute traffic to multiple servers in one or datacenter. If a datacenter or server becomes unavailable (unhealty) the load balancer will route the traffic to only available datacenters with servers.
+
+## High Scalability 
+Your ability to **increase you capacity** based on the increasing demand of traffic, memory and computing power.
+![high scalability](scalable.png)
+
+**Vertical Scaling** - Upgrade to a bigger server.
+**Horizontal Scaling** - Add more servers to the same size.
+
+## High Elasticity 
+Your ability to **automatically** increase or decrease your capacity based on the current demand of traffic, memory and computing power.
+
+**Horizontal scaling**
++ Scaling out - Add more servers to the same size.
++ Scaling in - Removing more servers to the same size.
+
+> [!NOTE]
+> *Vertical scaling is generally hard for traditional architecture so you'll usually only see horizontal scaling described with Elasticiyt.*
+
+> [!IMPORTANT]
+> **Azure VM Scale Sets**
+> 	- Automatically increase or decrease in response to demand or a defined schedule.
+>
+>  **SQL Server Stretch Database**
+> 	- Dynamically streatch warm and cold transactional data from microsoft SQL server 2016 to Microsoft Azure
+
+## Highly Fault Tolerant
+Your ability for you service to ensure there is no ==no single point of failure==. Preventing the chance of failure.
+
+**Fail-Overs** is when you have a plan to shift traffic to redundant system in case the primary system fails.
+
+![falut tolerant](fault.png)
+
+> [!IMPORTANT]
+> You can use **Azure Traffic Manager** which is a DNS-based traffic balancer to fail-over from a failing primary system to a stand-by secondary system.
+
+## High Durability
+Your ability to **recover** from a disaster and to prevent **the loss** of data solutions that recover from a disaster is known as ==Disaster recovery(DR)==.
+
++ Do you have a backup?
++ How fast can you restore that backup?
++ Does your backup still work?
++ How do you ensure current live data is not corrupt?
+
+## Business Continuity Plan(BCP)
+A **business continuity plan(BCP)** is a document that outlines how a business will continue operating **during an unplanned disruption is services**.
+
++ **Recovery point objective(RPO):** the maximum accepted amount of data loss after an unplanned data-loss incident, expressed as an amount of time.
++ **Recovery time objective(RTO):** the maximum amount of downtime your business can tolerate without incurring a significant financial loss.
+
+![bcp](business.png)
+
+## Disaster recovery options
+
+![diaster recovery](https://docs.aws.amazon.com/images/whitepapers/latest/disaster-recovery-workloads-on-aws/images/disaster-recovery-strategies.png)
+
+## The Evolution of Computing
+### Dedicated Servers
++ A physical server **wholly utilized by a single customer**.
+- you have to guess your capacity, you'll overpay for an underutilized server.
+- Upgrading beyond your capacity will be slow and expensive. 
+- You are limited by your operating system.
+- You have a **guarantee to security, privacy and full utility of underlying resources**.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
