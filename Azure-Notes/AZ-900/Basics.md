@@ -72,7 +72,7 @@ A cloud provider **can have hundreds of cloud services** that are grouped variou
 	- The basic building blocks for cloud IT. Provides access to networking features, computers and data storage space.
 	- *Don't worry about IT staff, data center and hardware.*
 
-![type of Cloud computing](typeOfCloudComputing.png)
+![type of Cloud computing](./img/typeOfCloudComputing.png)
 
 ## Types of Cloud Computing Responsibilities
 
@@ -98,7 +98,7 @@ A cloud provider **can have hundreds of cloud services** that are grouped variou
 	+ Using both *On-Premise* and a *Cloud Service Provider*.
 + **Cross-Cloud** 
 	+ using *Multiple cloud providers* Aka multi-cloud, hybrid-cloud
-	 ![Azure arc model](azureArcmodel.png)
+	 ![Azure arc model](./img/azureArcmodel.png)
 
 ## Total cost of ownership(TCO)
 + **On-Premise(CAPEX)**
@@ -145,7 +145,7 @@ A cloud provider **can have hundreds of cloud services** that are grouped variou
 
 ## High Availability
 Your ability for your service to **remain available** by ensuring there is ==no single point of failure== and/or ensure a certain level of performance.
-![high available](available.png)
+![high available](./img/available.png)
 
 Running you workload across multiple **Availability Zones** ensures that if 1 or 2 AZs become unavailable your service/applications remains available.
 
@@ -155,7 +155,7 @@ Running you workload across multiple **Availability Zones** ensures that if 1 or
 
 ## High Scalability 
 Your ability to **increase you capacity** based on the increasing demand of traffic, memory and computing power.
-![high scalability](scalable.png)
+![high scalability](./img/scalable.png)
 
 **Vertical Scaling** - Upgrade to a bigger server.
 **Horizontal Scaling** - Add more servers to the same size.
@@ -182,7 +182,7 @@ Your ability for you service to ensure there is no ==no single point of failure=
 
 **Fail-Overs** is when you have a plan to shift traffic to redundant system in case the primary system fails.
 
-![falut tolerant](fault.png)
+![falut tolerant](./img/fault.png)
 
 > [!IMPORTANT]
 > You can use **Azure Traffic Manager** which is a DNS-based traffic balancer to fail-over from a failing primary system to a stand-by secondary system.
@@ -201,7 +201,7 @@ A **business continuity plan(BCP)** is a document that outlines how a business w
 + **Recovery point objective(RPO):** the maximum accepted amount of data loss after an unplanned data-loss incident, expressed as an amount of time.
 + **Recovery time objective(RTO):** the maximum amount of downtime your business can tolerate without incurring a significant financial loss.
 
-![bcp](business.png)
+![bcp](./img/business.png)
 
 ## Disaster recovery options
 
