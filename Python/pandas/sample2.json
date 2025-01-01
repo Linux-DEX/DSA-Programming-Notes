@@ -1,0 +1,37 @@
+[
+  {
+    "Desktop": "Ubuntu",
+    "Release Year": 2004,
+    "Feature 1": "GNOME Desktop",
+    "Feature 2": "Debian-based",
+    "Feature 3": "Extensive Software Repositories"
+  },
+  {
+    "Desktop": "Fedora",
+    "Release Year": 2003,
+    "Feature 1": "GNOME Desktop",
+    "Feature 2": "Red Hat-based",
+    "Feature 3": "Security Features"
+  },
+  {
+    "Desktop": "Linux Mint",
+    "Release Year": 2006,
+    "Feature 1": "Cinnamon Desktop",
+    "Feature 2": "Debian/Ubuntu-based",
+    "Feature 3": "User-Friendly Interface"
+  },
+  {
+    "Desktop": "Arch Linux",
+    "Release Year": 2002,
+    "Feature 1": "Arch Way",
+    "Feature 2": "Rolling Release",
+    "Feature 3": "Minimalist"
+  },
+  {
+    "Desktop": "Debian",
+    "Release Year": 1993,
+    "Feature 1": "GNOME/KDE Desktop",
+    "Feature 2": "Stable",
+    "Feature 3": "Open Source"
+  }
+]

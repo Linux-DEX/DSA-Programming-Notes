@@ -31,6 +31,9 @@ print(arr2.ndim)  # print number of dimension
 print(arr2[0, 1])  # 2nd element on 1st row
 print(arr2[1, -1])  # last element of 2nd row
 print(arr2.shape)  # print shape of array
+for x in arr2:  # Iterating
+    for y in x:
+        print(y)
 
 # 3-D array
 arr3 = np.array([[[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]]])
@@ -38,6 +41,13 @@ print("\n", arr3)
 print(arr3.ndim)  # print number of dimension
 print(arr3[0, 1, 2])
 print(arr3.shape)  # print shape of array
+for x in arr3:  # Iterating
+    for y in x:
+        for z in y:
+            print(z)
+
+for x in np.nditer(arr3):  # Iterating using nditer func
+    print(x)
 
 # higher dimension arrays
 arr5 = np.array([1, 2, 3, 4], ndmin=5)
@@ -116,3 +126,53 @@ print(newarr2d)
 
 newarr3d = arr1d.reshape(2, 3, 2)
 print(newarr3d)
+
+# Join array
+
+arr1djoin1 = np.array([1, 2, 3])
+arr1djoin2 = np.array([4, 5, 6])
+
+arr_1d_result = np.concatenate((arr1djoin1, arr1djoin2))
+print("1D array join", arr_1d_result)
+
+arr2djoin1 = np.array([[1, 2], [3, 4]])
+arr2djoin2 = np.array([[5, 6], [7, 8]])
+
+arr_2d_result = np.concatenate((arr2djoin1, arr2djoin2), axis=1)
+print("2D array join", arr_2d_result)
+
+# Join array using stack() func
+
+arr_stack_result = np.stack((arr1djoin1, arr1djoin2), axis=1)
+print("join array using stack", arr_stack_result)
+
+arr_hstack_result = np.hstack((arr1djoin1, arr1djoin2))
+print("join array using hstack", arr_hstack_result)
+
+arr_vstack_result = np.vstack((arr1djoin1, arr1djoin2))
+print("join array using vstack", arr_vstack_result)
+
+arr_dstack_result = np.dstack((arr1djoin1, arr1djoin2))
+print("join array using dstack", arr_dstack_result)
+
+# splitting array
+
+split_1d_arr = np.array([1, 2, 3, 4, 5, 6])
+split_3_new_arr = np.array_split(split_1d_arr, 3)
+print("new split into 3 array", split_3_new_arr)
+
+split_4_new_arr = np.array_split(split_1d_arr, 4)
+print("new split into 4 array", split_4_new_arr)
+
+# Searching array
+
+val4 = np.where(arr1 == 4)
+print("value 4 in arr1", val4)
+
+sch_val4 = np.searchsorted(arr1, 4)
+print("search sorted arr1", sch_val4)
+
+# Sort array
+
+unsorted_arr = np.array([5, 9, 0, 3, 4])
+print("sorted array", np.sort(unsorted_arr))
