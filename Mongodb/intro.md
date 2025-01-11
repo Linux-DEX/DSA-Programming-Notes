@@ -32,21 +32,31 @@ The mongodb query api can be used in two ways:
 ## basic commands
 
 - showing list of database
+
 ```sh
 show dbs
 ```
 
 - change or create a database
+
 ```sh
 use blog
 ```
 
+- delete or drop database
+
+```sh
+db.dropDatabase()
+```
+
 - show collections
+
 ```sh
 show collections
 ```
 
-- create collection 
+- create collection
+
 ```sh
 db.createCollection("posts")
 
@@ -54,3 +64,10 @@ db.createCollection("posts")
 
 db.posts.insertOne(object)
 ```
+
+- delete collection
+
+```sh
+db.collection.drop()
+```
+
