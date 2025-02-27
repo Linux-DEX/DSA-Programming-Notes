@@ -1,9 +1,12 @@
 *.class
 venv/
+.venv/
 env/
+.env/
 .obsidian/
 .trash/
 .vscode/
+__pycache__/
 
 *.d
 

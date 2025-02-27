@@ -1,2 +1,0 @@
-
-print("Python practice code")
