@@ -1,13 +1,30 @@
-count = 0
+import sys 
 
-def func():
-    global count
-    if count == 4:
-        return
-    print("1")
-    count += 1
-    func()
+# def func(lst=None):
+#     if lst == None:
+#         lst = []
+#     lst.append(1)
+#     print(lst)
+
+def func(lst=[]):
+    lst.append(1)
+    print(lst)
+
+func() 
+func()  
+func()  
+
+def ErrorFunction():
+    try:
+        value = 10/0
+    except Exception as e:
+        print(f'error : {str(e)}')
+
+try:
+    ErrorFunction()
+except Exception as e:
+    print(f'error : {str(e)}')
 
 
-if __name__ == "__main__":
-    func()
+for path in sys.path:
+    print(path)
