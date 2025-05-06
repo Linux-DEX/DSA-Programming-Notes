@@ -790,17 +790,3 @@ git remote remove <remote_name>
 ```bash
 git remote rename <old_name> <new_name>
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
