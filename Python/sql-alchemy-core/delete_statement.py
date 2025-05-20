@@ -2,14 +2,14 @@ from sqlalchemy import text, create_engine, MetaData
 from logger import logger
 
 # Assuming your engine is already defined
-engine = create_engine('mysql+pymysql://xander:xander@localhost/testdb', echo=True)
+engine = create_engine("mysql+pymysql://xander:xander@localhost/testdb", echo=True)
 
 # Reflect metadata
 meta = MetaData()
 meta.reflect(bind=engine)
 
 # Get the `books` table from the Metadata object
-BOOKS = meta.tables['books']
+BOOKS = meta.tables["books"]
 
 conn = engine.connect()
 

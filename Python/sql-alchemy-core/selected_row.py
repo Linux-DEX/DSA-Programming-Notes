@@ -1,20 +1,20 @@
 import sqlalchemy
-from sqlalchemy import create_engine, MetaData 
+from sqlalchemy import create_engine, MetaData
 from logger import logger
 
 # connect to MySql
-engine = create_engine('mysql+pymysql://xander:xander@localhost/testdb', echo=True)
+engine = create_engine("mysql+pymysql://xander:xander@localhost/testdb", echo=True)
 
-# metadata usage 
+# metadata usage
 meta = MetaData()
 meta.reflect(bind=engine)
 
 # Get the books table from the Metadata object
-BOOKS = meta.tables['books']
+BOOKS = meta.tables["books"]
 
-# SQLAlchemy Query to select all rows with 
+# SQLAlchemy Query to select all rows with
 # fiction genre
-query = sqlalchemy.select(BOOKS).where(BOOKS.c.genre == 'fiction')
+query = sqlalchemy.select(BOOKS).where(BOOKS.c.genre == "fiction")
 
 # Automatically open and close; Execute the query using a connection
 with engine.connect() as conn:
@@ -24,7 +24,6 @@ with engine.connect() as conn:
 # Print the records
 for record in records:
     logger.info(f"\n{record}")
-
 
 
 # Manually open and close connection

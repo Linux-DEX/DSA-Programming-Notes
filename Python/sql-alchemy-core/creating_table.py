@@ -3,7 +3,9 @@ from logger import logger
 
 # define the engine
 # engine = db.create_engine('mysql+mysqlconnector://xander:xander@localhost/testdb', echo=True) # for mysql-connector-python package
-engine = db.create_engine('mysql+pymysql://xander:xander@localhost/testdb', echo=True) # for pymysql package
+engine = db.create_engine(
+    "mysql+pymysql://xander:xander@localhost/testdb", echo=True
+)  # for pymysql package
 
 # create the metadata object
 metadata_obj = db.MetaData()

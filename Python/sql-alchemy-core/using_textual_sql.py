@@ -2,12 +2,12 @@ from sqlalchemy import text, create_engine, MetaData
 from logger import logger
 
 # Assuming your engine is already defined
-engine = create_engine('mysql+pymysql://xander:xander@localhost/testdb', echo=True)
+engine = create_engine("mysql+pymysql://xander:xander@localhost/testdb", echo=True)
 
 #! execute insert query
 
 # Define raw SQL
-sql = text('SELECT * FROM books WHERE book_price > 100')
+sql = text("SELECT * FROM books WHERE book_price > 100")
 
 # Manually open and close connection
 conn = engine.connect()
@@ -25,14 +25,14 @@ data = [
         "book_id": 6,
         "book_price": 400,
         "genre": "fiction",
-        "book_name": "yoga is science"
+        "book_name": "yoga is science",
     },
     {
         "book_id": 7,
         "book_price": 800,
         "genre": "non-fiction",
-        "book_name": "alchemy tutorials"
-    }
+        "book_name": "alchemy tutorials",
+    },
 ]
 
 # Define the insert SQL query using text() and named params
@@ -69,13 +69,15 @@ meta = MetaData()
 meta.reflect(bind=engine)
 
 # Get the `books` table from the metadata
-BOOKS = meta.tables['books']
+BOOKS = meta.tables["books"]
 
 # Update query: change genre from 'non-fiction' to 'sci-fi'
-update_stmt = BOOKS.update().where(BOOKS.c.genre == 'non-fiction').values(genre='sci-fi')
+update_stmt = (
+    BOOKS.update().where(BOOKS.c.genre == "non-fiction").values(genre="sci-fi")
+)
 
 # Use connection with transaction
-with engine.begin() as conn: 
+with engine.begin() as conn:
     # Execute update
     conn.execute(update_stmt)
 
@@ -92,7 +94,7 @@ meta = MetaData()
 meta.reflect(bind=engine)
 
 # Get the `books` table from the Metadata object
-BOOKS = meta.tables['books']
+BOOKS = meta.tables["books"]
 
 # delete
 dele = BOOKS.delete().where(BOOKS.c.genre == "fiction")
@@ -100,7 +102,7 @@ dele = BOOKS.delete().where(BOOKS.c.genre == "fiction")
 conn = engine.connect()
 
 # Using transaction to ensure commit
-with conn.begin(): 
+with conn.begin():
     conn.execute(dele)
 
 # Verify the delete by fetching records
@@ -112,4 +114,3 @@ conn.close()
 # View the records
 for record in result:
     logger.info("\n{record}")
-
