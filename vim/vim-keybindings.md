@@ -315,3 +315,49 @@
 | :diffthis        | make current window part of diff            |
 | :dif[fupdate]    | update differences                          |
 | :diffo[ff]       | switch off diff mode for current window     |
+
+## LSP (Language Server Protocol)
+
+| Command                      | Description                                             |
+| ---------------------------- | ------------------------------------------------------- |
+| `gd`                         | Go to definition                                        |
+| `gD`                         | Go to declaration                                       |
+| `gi`                         | Go to implementation                                    |
+| `gr`                         | List references                                         |
+| `K`                          | Show hover documentation                                |
+| `<C-k>`                      | Show signature help                                     |
+| `<leader>rn`                 | Rename symbol                                           |
+| `<leader>ca`                 | Code actions menu                                       |
+| `[d`                         | Jump to previous diagnostic                             |
+| `]d`                         | Jump to next diagnostic                                 |
+| `<leader>e`                  | Show diagnostic in floating window                      |
+| `<leader>q`                  | Set location list with diagnostics                      |
+| `<leader>f`                  | Format document                                         |
+| `grn`                        | Rename symbol (`vim.lsp.buf.rename()`)                  |
+| `grr`                        | Find references (`vim.lsp.buf.references()`)            |
+| `gri`                        | Go to implementation (`vim.lsp.buf.implementation()`)   |
+| `gO`                         | Show document symbols (`vim.lsp.buf.document_symbol()`) |
+| `gra`                        | Apply code actions (`vim.lsp.buf.code_action()`)        |
+| `<C-s>` (Insert/Select mode) | Show signature help (`vim.lsp.buf.signature_help()`)    |
+
+## Navigation & Lists
+
+| Command            | Description                                  |
+| ------------------ | -------------------------------------------- |
+| `[q`, `]q`         | Previous / next quickfix entry               |
+| `[Q`, `]Q`         | First / last quickfix entry                  |
+| `[<C-q>`, `]<C-q>` | Jump backward / forward in quickfix list     |
+| `[l`, `]l`         | Previous / next location list entry          |
+| `[L`, `]L`         | First / last location list entry             |
+| `[<C-l>`, `]<C-l>` | Jump backward / forward in location list     |
+| `[t`, `]t`         | Previous / next tag match                    |
+| `[T`, `]T`         | First / last tag match                       |
+| `[<C-t>`, `]<C-t>` | Jump backward / forward in tag match list    |
+| `[a`, `]a`         | Previous / next argument in argument list    |
+| `[A`, `]A`         | First / last argument in argument list       |
+| `[b`, `]b`         | Previous / next buffer                       |
+| `[B`, `]B`         | First / last buffer                          |
+| `<Space>`          | Insert empty line above cursor (normal mode) |
+| `]<Space>`         | Insert empty line below cursor (normal mode) |
+
+
