@@ -68,6 +68,8 @@
 | ctrl + u  | move cursor & screen up 1/2 page                                      |
 | ctrl + o  | move backward in history ( edit history )                             |
 | ctrl + i  | move forward in history ( edit history )                              |
+| ctrl + a  | Increase number under cursor                                          |
+| ctrl + x  | Decrease number under cursor                                          |
 | \*        | jump to the next occurrence of the word under the cursor              |
 | \#        | jump to the previous occurrence of the word under the cursor          |
 
