@@ -1,4 +1,5 @@
 # VIM / NEOVIM
+
 ## Global
 
 | Command         | description            |
@@ -43,7 +44,7 @@
 | 0         | jump to the start of the line                                         |
 | ^         | jump to the first non-blank character of the line                     |
 | $         | jump to the end of the line                                           |
-| g_        | jump to the last non-blank character of the line                      |
+| g\_       | jump to the last non-blank character of the line                      |
 | gg        | go to the first line of the document                                  |
 | G         | go to the last line of the document                                   |
 | 5gg or 5G | go to line 5                                                          |
@@ -361,5 +362,3 @@
 | `[B`, `]B`         | First / last buffer                          |
 | `<Space>`          | Insert empty line above cursor (normal mode) |
 | `]<Space>`         | Insert empty line below cursor (normal mode) |
-
-
