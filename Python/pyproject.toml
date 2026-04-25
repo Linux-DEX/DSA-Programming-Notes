@@ -10,6 +10,7 @@ dependencies = [
     "numpy>=2.2.3",
     "pandas>=2.2.3",
     "pydantic>=2.10.6",
+    "pydantic-settings>=2.14.0",
     "pymysql>=1.1.1",
     "rich>=13.9.4",
     "ruff>=0.11.10",
