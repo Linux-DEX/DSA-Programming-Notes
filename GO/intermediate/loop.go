@@ -55,4 +55,19 @@ func main() {
 	for i := range chnl {
 		fmt.Println(i)
 	}
+
+	// loop run 3 time
+	for i := 0; i < 3; i++ {
+		for j := 0; j < 3; j++ {
+			if i == 1 && j == 1 {
+				goto EndLoop
+			}
+			// Print the current values of i and j
+			fmt.Printf("i: %d, j: %d\n", i, j)
+		}
+	}
+
+	// label for jumping out of the loop
+EndLoop:
+	fmt.Println("Exited the loop") 
 }
